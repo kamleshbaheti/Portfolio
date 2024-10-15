@@ -1,0 +1,389 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+
+:root {
+  --color-body: #F0EDCF;
+  --color-heading: #eef3db;
+  --color-base: #2e2e2e;
+  --color-base2: #000000;
+  --color-brand: #40A2D8;
+  --color-brand2: #deff58;
+  --sidbar-width: 240px;
+  --font-base: "Caveat";
+  --color-surface-white: #fffce1;
+  --color-just-black: #0e100f;
+}
+
+::selection {
+  color: rgb(0, 0, 0);
+  background: rgba(255, 255, 255, 0.64);
+}
+
+
+body {
+  background-color: var(--color-base2);
+  color: var(--color-body);
+  font-family: var(--font-base), cursive;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-heading);
+  font-weight: 700;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-body);
+  transition: all 0.4s ease;
+}
+
+a:hover {
+  color: var(--color-brand);
+}
+
+img {
+  width: 100%;
+}
+
+.text-brand {
+  color: var(--color-brand);
+}
+
+.bg-base {
+  /* background-color: var(--color-base); */
+  background-color: rgba(61, 61, 61, 0.401);
+}
+
+.full-height {
+  min-height: 100vh;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 80px;
+  /* padding-bottom: 80px; */
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.iconbox {
+  width: 100%;
+  height: 80px; /* Increased height for larger icons */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  background-color: var(--color-brand);
+  color: black;
+}
+
+.iconbox-wrapper {
+  flex: 0 0 16.6667%;
+  max-width: 16.6667%;
+  padding: 10px;
+}
+
+.iconbox i {
+  font-size: 3rem; /* Increased icon size */
+}
+
+@media (max-width: 1200px) {
+  .iconbox-wrapper {
+    flex: 0 0 20%;
+    max-width: 20%;
+  }
+}
+
+@media (max-width: 992px) {
+  .iconbox-wrapper {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+
+  .navbar{
+    border-bottom-left-radius: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .iconbox-wrapper {
+    flex: 0 0 33.3333%;
+    max-width: 33.3333%;
+  }
+}
+
+@media (max-width: 576px) {
+  .iconbox-wrapper {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+/* NAVBAR */
+.navbar {
+  background-color: var(--color-base);
+  border-bottom-right-radius: 2rem;
+}
+
+
+.navbar .nav-link {
+  font-size: 1.6rem;
+  font-weight: 700;
+  /* text-transform: uppercase; */
+  /* color: #fff; */
+  color: var(--color-body);
+}
+
+.navbar .nav-link:hover {
+  color: var(--color-brand);
+}
+
+.navbar .nav-link.active {
+  color: var(--color-brand);
+}
+
+@media (min-width: 992px) {
+  .navbar {
+    min-height: 100vh;
+    width: var(--sidbar-width);
+    /* background: linear-gradient(rgba(3, 63, 71, 0.8), rgba(3, 63, 71, 0.8)),
+      url(../images/sidebar-img.jpg); */
+    background: linear-gradient(#0000008f, #0000008f),
+      url(../images/wall.jpg);
+    background-size: cover;
+    background-position: center;
+    border-top-right-radius: 2rem;
+  }
+
+  .navbar-brand img {
+    border: 8px solid var(--color-brand);
+  }
+
+  /* CONTENT WRAPPER */
+  #content-wrapper {
+    padding-left: var(--sidbar-width);
+  }
+}
+
+/* BTN */
+.btn {
+  padding: 12px 28px;
+  font-weight: 700;
+}
+
+.btn-brand {
+  background-color: var(--color-brand);
+  border-color: var(--color-brand);
+  color: var(--color-base);
+}
+
+.btn-brand:hover,
+.btn-brand:focus {
+  background-color: var(--color-brand2);
+  color: var(--color-base);
+  border-color: var(--color-brand2);
+}
+
+.link-custom {
+  font-weight: 700;
+  position: relative;
+}
+
+.link-custom::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background-color: var(--color-brand);
+  position: absolute;
+  left: 0;
+  top: 110%;
+  transition: all 0.4s;
+}
+
+.link-custom:hover::after {
+  width: 100%;
+}
+
+/* CARD */
+.card-custom .card-custom-image {
+  overflow: hidden;
+}
+
+.card-custom .card-custom-image img {
+  transition: all 0.4s ease;
+}
+
+.card-custom:hover .card-custom-image img {
+  transform: scale(1.2);
+}
+
+/* CONTACT */
+#contact .form-control {
+  background-color: var(--color-base);
+  border-color: var(--color-base);
+  color: var(--color-body);
+}
+
+#contact .form-control:focus {
+  border-color: var(--color-brand);
+  box-shadow: none;
+}
+
+#contact .form-control::placeholder {
+  color: #f8f8f857;
+}
+
+#contact input.form-control {
+  height: 44px;
+}
+
+ul {
+  list-style: none;
+}
+
+.social_icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  margin: 0px;
+}
+
+.social_icons .icon-content {
+  margin: 0 5px;
+  position: relative;
+}
+
+.social_icons .icon-content .tooltip {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 2rem;
+  border-color: #000;
+  opacity: 0;
+  visibility: hidden;
+  font-family: var(--font-base), cursive;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.social_icons .icon-content:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+  top: -50px;
+}
+
+.social_icons .icon-content a {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 43px;
+  height: 42px;
+  border-radius: 50%;
+  color: #000000;
+  background-color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+
+.social_icons .icon-content a:hover {
+  box-shadow: 3px 2px 45px 0px rgb(0 0 0 / 12%);
+}
+
+.social_icons .icon-content a svg {
+  position: relative;
+  z-index: 1;
+  width: 23px;
+  height: 30px;
+}
+
+.social_icons .icon-content a:hover {
+  color: white;
+}
+
+.social_icons .icon-content a .filled {
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: #000;
+  transition: all 0.3s ease-in-out;
+}
+
+.social_icons .icon-content a:hover .filled {
+  height: 100%;
+}
+
+.social_icons .icon-content a[data-social="linkedin"] .filled,
+.social_icons .icon-content a[data-social="linkedin"]~.tooltip {
+  background-color: #0274b3;
+}
+
+.social_icons .icon-content a[data-social="github"] .filled,
+.social_icons .icon-content a[data-social="github"]~.tooltip {
+  background-color: #24262a;
+}
+
+.social_icons .icon-content a[data-social="gmail"] .filled,
+.social_icons .icon-content a[data-social="gmail"]~.tooltip {
+  background-color: #00000000;
+  }
+.social_icons .icon-content a[data-social="gmail"]:hover svg .path-1 {
+  fill: #4caf50;
+}
+
+.social_icons .icon-content a[data-social="gmail"]:hover svg .path-2 {
+  fill: #1e88e5;
+}
+
+.social_icons .icon-content a[data-social="gmail"]:hover svg .path-3 {
+  fill: #e53935;
+}
+
+.social_icons .icon-content a[data-social="gmail"]:hover svg .path-4 {
+  fill: #c62828;
+}
+
+.social_icons .icon-content a[data-social="gmail"]:hover svg .path-5 {
+  fill: #fbc02d;
+}
+
+.social_icons .icon-content a[data-social="instagram"] .filled,
+.social_icons .icon-content a[data-social="instagram"]~.tooltip {
+  background: linear-gradient(45deg,
+      #405de6,
+      #5b51db,
+      #b33ab4,
+      #c135b4,
+      #e1306c,
+      #fd1f1f);
+}
+
+.social_icons .icon-content a[data-social="telegram"] .filled,
+.social_icons .icon-content a[data-social="telegram"]~.tooltip {
+  background-color: #0088cc;
+}
+
+.zoom-text {
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+/* Zoom effect on hover */
+.zoom-text:hover {
+  transform: scale(1.3); /* Zooms the text by 1.5 times */
+}
+
+.profiles {
+  font-size: 2rem;
+  padding-bottom: 0.8rem;
+}

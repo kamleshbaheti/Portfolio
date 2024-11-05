@@ -1,0 +1,2296 @@
+:root {
+  --color-body: #F0EDCF;
+  --color-heading: #eef3db;
+  --color-base: #2e2e2e;
+  --color-base2: #000000;
+  --color-brand: #40A2D8;
+  --color-brand2: #deff58;
+  --sidbar-width: 240px;
+  --font-base: "Caveat";
+  --color-surface-white: #fffce1;
+  --color-just-black: #0e100f;
+}
+
+* {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar:hover {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333131;
+  border-top-left-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #686868;
+}
+
+body {
+  background-color: var(--color-base2);
+  color: var(--color-body);
+  font-family: var(--font-base), cursive;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-heading);
+  font-weight: 700;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-body);
+  transition: all 0.4s ease;
+}
+
+a:hover {
+  color: var(--color-brand);
+}
+
+img {
+  width: 100%;
+}
+
+.text-brand {
+  color: var(--color-brand);
+}
+
+.bg-base {
+  background-color: rgba(61, 61, 61, 0.401);
+}
+
+.full-height {
+  min-height: 100vh;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 80px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.iconbox {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  background-color: var(--color-brand);
+  color: black;
+}
+
+.iconbox-wrapper {
+  flex: 0 0 16.6667%;
+  max-width: 16.6667%;
+  padding: 10px;
+}
+
+.iconbox i {
+  font-size: 3rem;
+}
+
+@media (max-width: 1200px) {
+  .iconbox-wrapper {
+    flex: 0 0 20%;
+    max-width: 20%;
+  }
+}
+
+@media (max-width: 992px) {
+  .iconbox-wrapper {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+
+  .navbar {
+    border-bottom-left-radius: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .iconbox-wrapper {
+    flex: 0 0 33.3333%;
+    max-width: 33.3333%;
+  }
+}
+
+@media (max-width: 576px) {
+  .iconbox-wrapper {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+.navbar {
+  background-color: #2e2e2e;
+  border-bottom-right-radius: 2rem;
+  padding: 0px;
+}
+
+.navbar .nav-link {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--color-body);
+}
+
+.navbar .nav-link:hover {
+  color: var(--color-brand);
+}
+
+
+@keyframes highlight {
+  0% {
+    transform: scale(1);
+    color: white;
+  }
+
+  50% {
+    transform: scale(1.4);
+  }
+
+  100% {
+    transform: scale(1);
+    color: var(--color-body);
+  }
+}
+
+.nav-link:active {
+  animation: highlight 0.5s ease-in;
+}
+
+@media (min-width: 992px) {
+  .navbar {
+    min-height: 100vh;
+    width: var(--sidbar-width);
+    background: linear-gradient(#0000008f, #0000008f),
+      url(../images/wall.jpg);
+    background-size: cover;
+    background-position: center;
+    border-top-right-radius: 2rem;
+  }
+
+  .navbar-brand img {
+    border: 8px solid var(--color-brand);
+  }
+
+  #content-wrapper {
+    padding-left: var(--sidbar-width);
+  }
+}
+
+.btn {
+  padding: 12px 28px;
+  font-weight: 700;
+}
+
+.btn-brand {
+  background-color: var(--color-brand);
+  border-color: var(--color-brand);
+  color: var(--color-base);
+}
+
+.btn-brand:hover,
+.btn-brand:focus {
+  background-color: var(--color-brand2);
+  color: var(--color-base);
+  border-color: var(--color-brand2);
+}
+
+.link-custom {
+  font-weight: 700;
+  position: relative;
+}
+
+.link-custom::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background-color: var(--color-brand);
+  position: absolute;
+  left: 0;
+  top: 110%;
+  transition: all 0.4s;
+}
+
+.link-custom:hover::after {
+  width: 100%;
+}
+
+.card-custom .card-custom-image {
+  overflow: hidden;
+}
+
+.card-custom .card-custom-image img {
+  transition: all 0.4s ease;
+}
+
+.card-custom:hover .card-custom-image img {
+  transform: scale(1.2);
+}
+
+#footer .form-control {
+  background-color: var(--color-base);
+  border-color: var(--color-base);
+  color: var(--color-body);
+  border-radius: 1rem;
+}
+
+#footer .form-control:focus {
+  border-color: var(--color-brand);
+  box-shadow: none;
+}
+
+#footer .form-control::placeholder {
+  color: #f8f8f857;
+}
+
+#footer input.form-control {
+  height: 44px;
+}
+
+ul {
+  list-style: none;
+}
+
+.social_icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  margin: 0px;
+}
+
+.social_icons .icon-content {
+  margin: 0 5px;
+  position: relative;
+}
+
+.social_icons .icon-content .tooltip {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 3rem;
+  border-color: #000;
+  opacity: 0;
+  visibility: hidden;
+  font-family: var(--font-base), cursive;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+@media (max-width:600.98px) {
+  .tooltip {
+    display: none;
+  }
+}
+
+.social_icons .icon-content:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+  top: -20px;
+}
+
+.social_icons .icon-content a {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 43px;
+  height: 42px;
+  border-radius: 3rem;
+  color: #000000;
+  background-color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+
+.social_icons .icon-content a:hover {
+  box-shadow: 3px 2px 45px 0px rgb(0 0 0 / 12%);
+}
+
+.social_icons .icon-content a svg {
+  position: relative;
+  z-index: 1;
+  width: 23px;
+  height: 30px;
+}
+
+.social_icons .icon-content a:hover {
+  color: white;
+}
+
+.social_icons .icon-content a .filled {
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: #000;
+  transition: all 0.3s ease-in-out;
+}
+
+.social_icons .icon-content a:hover .filled {
+  height: 100%;
+}
+
+.social_icons .icon-content a[data-social="linkedin"] .filled,
+.social_icons .icon-content a[data-social="linkedin"]~.tooltip {
+  background-color: #0274b3;
+}
+
+.social_icons .icon-content a[data-social="github"] .filled,
+.social_icons .icon-content a[data-social="github"]~.tooltip {
+  background-color: #24292e;
+}
+
+.social_icons .icon-content a[data-social="gmail"] .filled,
+.social_icons .icon-content a[data-social="gmail"]~.tooltip {
+  background-color: #ffffff00;
+}
+
+.social_icons .icon-content a[data-social="gmail"]:hover svg .path-1 {
+  fill: #4caf50;
+}
+
+.social_icons .icon-content a[data-social="gmail"]:hover svg .path-2 {
+  fill: #1e88e5;
+}
+
+.social_icons .icon-content a[data-social="gmail"]:hover svg .path-3 {
+  fill: #e53935;
+}
+
+.social_icons .icon-content a[data-social="gmail"]:hover svg .path-4 {
+  fill: #c62828;
+}
+
+.social_icons .icon-content a[data-social="gmail"]:hover svg .path-5 {
+  fill: #fbc02d;
+}
+
+.social_icons .icon-content a[data-social="instagram"] .filled,
+.social_icons .icon-content a[data-social="instagram"]~.tooltip {
+  background: linear-gradient(45deg,
+      #405de6,
+      #5b51db,
+      #b33ab4,
+      #c135b4,
+      #e1306c,
+      #fd1f1f);
+}
+
+.social_icons .icon-content a[data-social="telegram"] .filled,
+.social_icons .icon-content a[data-social="telegram"]~.tooltip {
+  background-color: #0088cc;
+}
+
+.zoom-text {
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+.zoom-text:hover {
+  transform: scale(1.2);
+}
+
+.profiles {
+  font-size: 2rem;
+  padding-bottom: 0.8rem;
+}
+
+
+.icon-fade {
+  transition: opacity 0.3s ease;
+}
+
+.text-fade {
+  position: absolute;
+  opacity: 0;
+  color: black;
+  transition: opacity 0.3s ease;
+  font-size: 1.6rem;
+}
+
+.zoom-text:hover .icon-fade {
+  opacity: 0;
+}
+
+.zoom-text:hover .text-fade {
+  opacity: 1;
+}
+
+@keyframes animate {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+    border-radius: 0;
+  }
+
+  100% {
+    transform: translateY(-1000px) rotate(720deg);
+    opacity: 0;
+    border-radius: 80%;
+  }
+}
+
+.background {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  background: #000000;
+  overflow: hidden;
+}
+
+.background li {
+  position: absolute;
+  display: block;
+  list-style: none;
+  width: 20px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  animation: animate 12s linear infinite;
+}
+
+
+.background li:nth-child(0) {
+  left: 34%;
+  width: 166px;
+  height: 166px;
+  bottom: -166px;
+  animation-delay: 1s;
+}
+
+.background li:nth-child(1) {
+  left: 16%;
+  width: 104px;
+  height: 104px;
+  bottom: -104px;
+  animation-delay: 3s;
+}
+
+.background li:nth-child(2) {
+  left: 39%;
+  width: 130px;
+  height: 130px;
+  bottom: -130px;
+  animation-delay: 3s;
+}
+
+.background li:nth-child(3) {
+  left: 45%;
+  width: 251px;
+  height: 251px;
+  bottom: -251px;
+  animation-delay: 14s;
+}
+
+.background li:nth-child(4) {
+  left: 17%;
+  width: 228px;
+  height: 228px;
+  bottom: -228px;
+  animation-delay: 10s;
+}
+
+.background li:nth-child(5) {
+  left: 35%;
+  width: 103px;
+  height: 103px;
+  bottom: -103px;
+  animation-delay: 1s;
+}
+
+.background li:nth-child(6) {
+  left: 5%;
+  width: 147px;
+  height: 147px;
+  bottom: -147px;
+  animation-delay: 18s;
+}
+
+.background li:nth-child(7) {
+  left: 77%;
+  width: 145px;
+  height: 145px;
+  bottom: -145px;
+  animation-delay: 8s;
+}
+
+.background li:nth-child(8) {
+  left: 8%;
+  width: 166px;
+  height: 166px;
+  bottom: -166px;
+  animation-delay: 2s;
+}
+
+.background li:nth-child(9) {
+  left: 32%;
+  width: 251px;
+  height: 251px;
+  bottom: -251px;
+  animation-delay: 31s;
+}
+
+.background li:nth-child(10) {
+  left: 73%;
+  width: 106px;
+  height: 106px;
+  bottom: -106px;
+  animation-delay: 23s;
+}
+
+.background li:nth-child(11) {
+  left: 31%;
+  width: 103px;
+  height: 103px;
+  bottom: -103px;
+  animation-delay: 2s;
+}
+
+.background li:nth-child(12) {
+  left: 56%;
+  width: 203px;
+  height: 203px;
+  bottom: -203px;
+  animation-delay: 3s;
+}
+
+.background li:nth-child(13) {
+  left: 82%;
+  width: 137px;
+  height: 137px;
+  bottom: -137px;
+  animation-delay: 19s;
+}
+
+.background li:nth-child(14) {
+  left: 77%;
+  width: 188px;
+  height: 188px;
+  bottom: -188px;
+  animation-delay: 26s;
+}
+
+.background li:nth-child(15) {
+  left: 72%;
+  width: 113px;
+  height: 113px;
+  bottom: -113px;
+  animation-delay: 62s;
+}
+
+.background li:nth-child(16) {
+  left: 44%;
+  width: 237px;
+  height: 237px;
+  bottom: -237px;
+  animation-delay: 16s;
+}
+
+
+.image-wrapper {
+  height: 11.5rem;
+  border-radius: 25rem;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 992px) {
+  .image-wrapper {
+    height: 6.5rem;
+  }
+}
+
+
+.image-wrapper img {
+  height: auto;
+  max-width: 100%;
+}
+
+.shines {
+  position: relative;
+  overflow: hidden;
+}
+
+.shines::before {
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%);
+  content: "";
+  display: block;
+  height: 100%;
+  left: -75%;
+  position: absolute;
+  top: 0;
+  transform: skewX(-25deg);
+  width: 50%;
+  z-index: 2;
+}
+
+.shines:hover::before,
+.shines:focus::before {
+  animation: shines 0.85s;
+}
+
+@keyframes shines {
+  100% {
+    left: 125%;
+  }
+}
+
+:root {
+  --color: var(--yellow-5);
+  --shadow: var(--yellow-8);
+  --glare: var(--yellow-5);
+  --font-size: var(--font-size-fluid-3);
+  --transition: 0.3s;
+}
+
+
+.shine {
+  padding: 0;
+  color: transparent;
+  position: relative;
+  transition: background 0.2s;
+}
+
+.shine:hover {
+  background: transparent;
+}
+
+.shine_span {
+  display: inline-block;
+  transition: all 5s;
+}
+
+.shine_span:last-of-type {
+  position: absolute;
+  inset: var(--padding);
+  color: transparent;
+  z-index: 2;
+}
+
+.shine_span:last-of-type {
+  transition: transform 0.2s, background-position 0s;
+}
+
+.shine:hover span:last-of-type {
+  transition: transform 0.2s, background-position calc(var(--hover) * 1.5s) calc(var(--hover) * 0.25s);
+}
+
+.shine {
+  --hover: 0.4;
+  --pos: 0;
+}
+
+.shine:hover {
+  --hover: 1;
+  --pos: 1;
+}
+
+.shine:active {
+  --hover: 0;
+}
+
+.shine:active span:last-of-type {
+  --hover: 0;
+  --pos: 1;
+}
+
+.shine svg {
+  position: absolute;
+  z-index: 3;
+  width: calc(var(--font-size) * 0.5);
+  aspect-ratio: 1;
+}
+
+.shine svg path {
+  fill: var(--glare);
+}
+
+.shine:hover svg {
+  -webkit-animation: sparkle 0.75s calc((var(--delay-step) * var(--d)) * 1s) both;
+  animation: sparkle 0.75s calc((var(--delay-step) * var(--d)) * 1s) both;
+}
+
+@-webkit-keyframes sparkle {
+  50% {
+    transform: translate(-50%, -50%) scale(var(--s, 1));
+  }
+}
+
+@keyframes sparkle {
+  50% {
+    transform: translate(-50%, -50%) scale(var(--s, 1));
+  }
+}
+
+.shine svg {
+  --delay-step: 0.15;
+  top: calc(var(--y, 50) * 1%);
+  left: calc(var(--x, 0) * 1%);
+  transform: translate(-50%, -50%) scale(0);
+}
+
+.shine svg:nth-of-type(1) {
+  --x: 0;
+  --y: 20;
+  --s: 1.1;
+  --d: 1;
+}
+
+.shine svg:nth-of-type(2) {
+  --x: 15;
+  --y: 80;
+  --s: 1.25;
+  --d: 2;
+}
+
+.shine svg:nth-of-type(3) {
+  --x: 45;
+  --y: 40;
+  --s: 1.1;
+  --d: 3;
+}
+
+.shine svg:nth-of-type(4) {
+  --x: 75;
+  --y: 60;
+  --s: 0.9;
+  --d: 2;
+}
+
+.shine svg:nth-of-type(5) {
+  --x: 100;
+  --y: 30;
+  --s: 0.8;
+  --d: 4;
+}
+
+.resume_button {
+  position: relative;
+  padding: 0px 35px;
+  background: var(--color);
+  font-size: 24px;
+  font-weight: 500;
+  color: #181818;
+  border: 3px solid var(--color);
+  border-radius: 3rem;
+  box-shadow: 0 0 0 #fec1958c;
+  transition: all .3s ease-in-out;
+  cursor: pointer;
+}
+
+.star-1 {
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  width: 25px;
+  height: auto;
+  filter: drop-shadow(0 0 0 #fffdef);
+  z-index: -5;
+  transition: all 1s cubic-bezier(0.05, 0.83, 0.43, 0.96);
+}
+
+.star-2 {
+  position: absolute;
+  top: 45%;
+  left: 45%;
+  width: 15px;
+  height: auto;
+  filter: drop-shadow(0 0 0 #fffdef);
+  z-index: -5;
+  transition: all 1s cubic-bezier(0, 0.4, 0, 1.01);
+}
+
+.star-3 {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  width: 5px;
+  height: auto;
+  filter: drop-shadow(0 0 0 #fffdef);
+  z-index: -5;
+  transition: all 1s cubic-bezier(0, 0.4, 0, 1.01);
+}
+
+.star-4 {
+  position: absolute;
+  top: 20%;
+  left: 40%;
+  width: 8px;
+  height: auto;
+  filter: drop-shadow(0 0 0 #fffdef);
+  z-index: -5;
+  transition: all .8s cubic-bezier(0, 0.4, 0, 1.01);
+}
+
+.star-5 {
+  position: absolute;
+  top: 25%;
+  left: 45%;
+  width: 15px;
+  height: auto;
+  filter: drop-shadow(0 0 0 #fffdef);
+  z-index: -5;
+  transition: all .6s cubic-bezier(0, 0.4, 0, 1.01);
+}
+
+.star-6 {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  width: 5px;
+  height: auto;
+  filter: drop-shadow(0 0 0 #fffdef);
+  z-index: -5;
+  transition: all .8s ease;
+}
+
+.resume_button:hover {
+  background: transparent;
+  color: var(--color);
+  box-shadow: 0 0 15px #fec1958c;
+}
+
+.resume_button:hover .star-1 {
+  position: absolute;
+  top: -80%;
+  left: -30%;
+  width: 25px;
+  height: auto;
+  filter: drop-shadow(0 0 5px #fffdef);
+  z-index: 2;
+}
+
+.resume_button:hover .star-2 {
+  position: absolute;
+  top: -25%;
+  left: 10%;
+  width: 15px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #fffdef);
+  z-index: 2;
+}
+
+.resume_button:hover .star-3 {
+  position: absolute;
+  top: 55%;
+  left: 25%;
+  width: 5px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #fffdef);
+  z-index: 2;
+}
+
+.resume_button:hover .stars {
+  display: block;
+  filter: drop-shadow(0 0 10px #fffdef);
+}
+
+.resume_button:hover .star-4 {
+  position: absolute;
+  top: 30%;
+  left: 80%;
+  width: 8px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #fffdef);
+  z-index: 2;
+}
+
+.resume_button:hover .star-5 {
+  position: absolute;
+  top: 25%;
+  left: 115%;
+  width: 15px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #fffdef);
+  z-index: 2;
+}
+
+.resume_button:hover .star-6 {
+  position: absolute;
+  top: 5%;
+  left: 60%;
+  width: 5px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #fffdef);
+  z-index: 2;
+}
+
+.fil0 {
+  fill: #f4df44
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  color: inherit;
+  width: 200px;
+  height: 50px;
+  cursor: pointer;
+  font-size: 16px;
+  position: relative;
+}
+
+.link_btn {
+  border: 2px solid rgb(255, 255, 255);
+  animation: 0.5s collision ease-in;
+  overflow: hidden;
+  transition: 0.3s 0.1s;
+}
+
+.link_btn:active {
+  transform: translateX(100px);
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.link_btn a {
+  position: relative;
+  color: rgb(255, 255, 255);
+  font-weight: 700;
+  font-size: 1.2rem;
+  z-index: 5;
+  transition: 1s ease-in-out;
+}
+
+.link_btn:hover a {
+  color: #000000;
+}
+
+.link_btn:before,
+.link_btn:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: rgb(255, 255, 255);
+}
+
+.link_btn:hover:before {
+  animation: collisionLeft 1s both;
+  animation-direction: alternate;
+}
+
+.link_btn:hover:after {
+  animation: collisionRight 1s both;
+  animation-direction: alternate;
+}
+
+.link_btn:before {
+  left: -30%;
+}
+
+.link_btn:after {
+  left: 125%;
+}
+
+@keyframes collisionLeft {
+  0% {
+    left: -30%;
+    width: 20px;
+    height: 20px;
+  }
+
+  50% {
+    left: 50%;
+    width: 40px;
+    height: 40px;
+  }
+
+  100% {
+    left: 50%;
+    width: 300px;
+    height: 300px;
+  }
+}
+
+@keyframes collisionRight {
+  0% {
+    left: 125%;
+    width: 20px;
+    height: 20px;
+  }
+
+  50% {
+    left: 50%;
+    width: 40px;
+    height: 40px;
+  }
+
+  100% {
+    left: 50%;
+    width: 300px;
+    height: 300px;
+  }
+}
+
+.link_btn-3 {
+  filter: url("#goo");
+  border: none;
+  background: transparent;
+}
+
+
+
+
+.wrapper-no4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.wrapper-no4 .button-bird {
+  width: 300px;
+  height: 88px;
+  background-color: #80cdf7;
+  border-radius: 3rem;
+  position: absolute;
+  top: 70%;
+  opacity: 1;
+  transform: translateY(-50%);
+  padding: 0;
+  border: none;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.wrapper-no4 .button-bird__text {
+  text-align: center;
+  font-size: 30px;
+  color: #000000;
+  position: absolute;
+  z-index: 1000;
+  top: 50%;
+  margin: 0;
+  transform: translateY(-50%);
+}
+
+.wrapper-no4 .button-bird:focus {
+  outline: none;
+}
+
+.wrapper-no4 .button-bird:hover .bird--30 {
+  left: 600px;
+  top: -550px;
+  opacity: 0;
+  transition: left 1.5s cubic-bezier(0.42, 0, 0.58, 1), top 1.5s cubic-bezier(0.42, 0, 0.58, 1), opacity 0.5s linear 1s;
+}
+
+.wrapper-no4 .button-bird:hover .bird--30:after {
+  left: 50px;
+  top: 50px;
+  transition: all 1.5s cubic-bezier(0.42, 0, 0.58, 1) -0.5s;
+}
+
+.wrapper-no4 .button-bird:hover .bird--30:before {
+  left: -50px;
+  top: 50px;
+  transition: all 1.5s cubic-bezier(0.42, 0, 0.58, 1) -0.5s;
+}
+
+.wrapper-no4 .button-bird .feather {
+  position: absolute;
+  width: 18%;
+  left: 40%;
+  top: 12px;
+  display: none;
+  opacity: 0;
+  fill: #ffffff;
+}
+
+.wrapper-no4 .button-bird.active {
+  background-color: transparent;
+  transition: all 0.2s linear 0.1s;
+}
+
+.wrapper-no4 .button-bird.active .button-bird__text {
+  color: #80cdf7;
+  -webkit-animation: text-fade 1.5s 0.2s;
+  animation: text-fade 1.5s 0.2s;
+}
+
+.wrapper-no4 .button-bird.active .feather {
+  display: block;
+  -webkit-animation: feather-fade 1.5s linear 0.5s forwards;
+  animation: feather-fade 1.5s linear 0.5s forwards;
+}
+
+.wrapper-no4 .button-bird.active .bird--20,
+.wrapper-no4 .button-bird.active .bird--19,
+.wrapper-no4 .button-bird.active .bird--18,
+.wrapper-no4 .button-bird.active .bird--21,
+.wrapper-no4 .button-bird.active .bird--23,
+.wrapper-no4 .button-bird.active .bird--25,
+.wrapper-no4 .button-bird.active .bird--30 {
+  left: 600px;
+  top: -550px;
+  opacity: 0;
+  transition: left 2s cubic-bezier(0.42, 0, 0.58, 1), top 2s cubic-bezier(0.42, 0, 0.58, 1), opacity 0.5s linear 1.5s;
+}
+
+.wrapper-no4 .button-bird.active .bird--5,
+.wrapper-no4 .button-bird.active .bird--17,
+.wrapper-no4 .button-bird.active .bird--16,
+.wrapper-no4 .button-bird.active .bird--15,
+.wrapper-no4 .button-bird.active .bird--22 {
+  left: 600px;
+  top: -600px;
+  opacity: 0;
+  transition: left 2s cubic-bezier(0.42, 0, 0.58, 1) 0.1s, top 2s cubic-bezier(0.42, 0, 0.58, 1) 0.1s, opacity 0.5s linear 1.6s;
+}
+
+.wrapper-no4 .button-bird.active .bird--14,
+.wrapper-no4 .button-bird.active .bird--13,
+.wrapper-no4 .button-bird.active .bird--12,
+.wrapper-no4 .button-bird.active .bird--24,
+.wrapper-no4 .button-bird.active .bird--1 {
+  left: 650px;
+  top: -650px;
+  opacity: 0;
+  transition: left 2s cubic-bezier(0.42, 0, 0.58, 1) 0.15s, top 2s cubic-bezier(0.42, 0, 0.58, 1) 0.15s, opacity 0.5s linear 1.65s;
+}
+
+.wrapper-no4 .button-bird.active .bird--11,
+.wrapper-no4 .button-bird.active .bird--10,
+.wrapper-no4 .button-bird.active .bird--9,
+.wrapper-no4 .button-bird.active .bird--26,
+.wrapper-no4 .button-bird.active .bird--27 {
+  left: 650px;
+  top: -700px;
+  opacity: 0;
+  transition: left 2s cubic-bezier(0.42, 0, 0.58, 1) 0.2s, top 2s cubic-bezier(0.42, 0, 0.58, 1) 0.2s, opacity 0.5s linear 1.7s;
+}
+
+.wrapper-no4 .button-bird.active .bird--8,
+.wrapper-no4 .button-bird.active .bird--7,
+.wrapper-no4 .button-bird.active .bird--6,
+.wrapper-no4 .button-bird.active .bird--28 {
+  left: 700px;
+  top: -750px;
+  opacity: 0;
+  transition: left 2s cubic-bezier(0.42, 0, 0.58, 1) 0.25s, top 2s cubic-bezier(0.42, 0, 0.58, 1) 0.25s, opacity 0.5s linear 1.75s;
+}
+
+.wrapper-no4 .button-bird.active .bird,
+.wrapper-no4 .button-bird.active .bird--4,
+.wrapper-no4 .button-bird.active .bird--29,
+.wrapper-no4 .button-bird.active .bird--3 {
+  left: 750px;
+  top: -800px;
+  opacity: 0;
+  transition: left 2s cubic-bezier(0.42, 0, 0.58, 1) 0.3s, top 2s cubic-bezier(0.42, 0, 0.58, 1) 0.3s, opacity 0.5s linear 1.8s;
+}
+
+.wrapper-no4 .button-bird.active .bird--2 {
+  left: 850px;
+  top: -850px;
+  opacity: 0;
+  transition: left 1.5s cubic-bezier(0.42, 0, 0.58, 1) 0.35s, top 1.5s cubic-bezier(0.42, 0, 0.58, 1) 0.35s, opacity 0.5s linear 1.8s;
+}
+
+.wrapper-no4 .button-bird.active .bird--5:after,
+.wrapper-no4 .button-bird.active .bird--4:after,
+.wrapper-no4 .button-bird.active .bird--8:after,
+.wrapper-no4 .button-bird.active .bird--14:before,
+.wrapper-no4 .button-bird.active .bird--16:after,
+.wrapper-no4 .button-bird.active .bird--17:before,
+.wrapper-no4 .button-bird.active .bird--21:after,
+.wrapper-no4 .button-bird.active .bird--30:after,
+.wrapper-no4 .button-bird.active .bird--30:before {
+  left: 50px;
+  top: -100px;
+  transition: all 1s cubic-bezier(0.42, 0, 0.58, 1) -0.3s;
+}
+
+.wrapper-no4 .button-bird.active .bird--4:before,
+.wrapper-no4 .button-bird.active .bird--7:before,
+.wrapper-no4 .button-bird.active .bird--9:after,
+.wrapper-no4 .button-bird.active .bird--12:before,
+.wrapper-no4 .button-bird.active .bird--13:before,
+.wrapper-no4 .button-bird.active .bird--18:after,
+.wrapper-no4 .button-bird.active .bird--27:after,
+.wrapper-no4 .button-bird.active .bird--26:before {
+  left: -50px;
+  top: 0px;
+  transition: all ss cubic-bezier(0.42, 0, 0.58, 1) -0.5s;
+}
+
+.wrapper-no4 .button-bird.active .bird:before,
+.wrapper-no4 .button-bird.active .bird--2:after,
+.wrapper-no4 .button-bird.active .bird--1:after,
+.wrapper-no4 .button-bird.active .bird--7:after,
+.wrapper-no4 .button-bird.active .bird--8:before,
+.wrapper-no4 .button-bird.active .bird--15:after,
+.wrapper-no4 .button-bird.active .bird--19:before,
+.wrapper-no4 .button-bird.active .bird--22:after,
+.wrapper-no4 .button-bird.active .bird--28:after,
+.wrapper-no4 .button-bird.active .bird--28:before,
+.wrapper-no4 .button-bird.active .bird--3:after {
+  left: 100px;
+  top: -100px;
+  transition: all 1s cubic-bezier(0.42, 0, 0.58, 1) 0s;
+}
+
+.wrapper-no4 .button-bird.active .bird--2:before,
+.wrapper-no4 .button-bird.active .bird--1:before,
+.wrapper-no4 .button-bird.active .bird--9:before,
+.wrapper-no4 .button-bird.active .bird--12:after,
+.wrapper-no4 .button-bird.active .bird--13:after,
+.wrapper-no4 .button-bird.active .bird--17:after,
+.wrapper-no4 .button-bird.active .bird--19:before,
+.wrapper-no4 .button-bird.active .bird--23:after,
+.wrapper-no4 .button-bird.active .bird--23:before {
+  left: 50px;
+  top: -10px;
+  transition: all 2s cubic-bezier(0.42, 0, 0.58, 1) -0.5s;
+}
+
+.wrapper-no4 .button-bird.active .bird:after,
+.wrapper-no4 .button-bird.active .bird--6:before,
+.wrapper-no4 .button-bird.active .bird--10:after,
+.wrapper-no4 .button-bird.active .bird--11:after,
+.wrapper-no4 .button-bird.active .bird--16:before,
+.wrapper-no4 .button-bird.active .bird--18:before,
+.wrapper-no4 .button-bird.active .bird--20:before,
+.wrapper-no4 .button-bird.active .bird--24:before,
+.wrapper-no4 .button-bird.active .bird--26:after,
+.wrapper-no4 .button-bird.active .bird--27:before {
+  left: 50px;
+  top: 50px;
+  transition: all 2s cubic-bezier(0.42, 0, 0.58, 1) -0.5s;
+}
+
+.wrapper-no4 .button-bird.active .bird--3:before,
+.wrapper-no4 .button-bird.active .bird--6:after,
+.wrapper-no4 .button-bird.active .bird--10:before,
+.wrapper-no4 .button-bird.active .bird--11:before,
+.wrapper-no4 .button-bird.active .bird--14:after,
+.wrapper-no4 .button-bird.active .bird--15:before,
+.wrapper-no4 .button-bird.active .bird--20:after,
+.wrapper-no4 .button-bird.active .bird--22:before,
+.wrapper-no4 .button-bird.active .bird--24:after,
+.wrapper-no4 .button-bird.active .bird--25:after,
+.wrapper-no4 .button-bird.active .bird--25:before,
+.wrapper-no4 .button-bird.active .bird--5:before {
+  left: 100px;
+  top: -10px;
+  transition: all 2s cubic-bezier(0.42, 0, 0.58, 1) -0.5s;
+}
+
+.wrapper-no4 .bird,
+.wrapper-no4 .bird:before,
+.wrapper-no4 .bird:after,
+.wrapper-no4 .bird--1,
+.wrapper-no4 .bird--1:after,
+.wrapper-no4 .bird--1:before,
+.wrapper-no4 .bird--2,
+.wrapper-no4 .bird--2:after,
+.wrapper-no4 .bird--2:before,
+.wrapper-no4 .bird--3,
+.wrapper-no4 .bird--3:after,
+.wrapper-no4 .bird--3:before,
+.wrapper-no4 .bird--4,
+.wrapper-no4 .bird--4:after,
+.wrapper-no4 .bird--4:before,
+.wrapper-no4 .bird--5,
+.wrapper-no4 .bird--5:after,
+.wrapper-no4 .bird--5:before,
+.wrapper-no4 .bird--6,
+.wrapper-no4 .bird--6:after,
+.wrapper-no4 .bird--6:before,
+.wrapper-no4 .bird--7,
+.wrapper-no4 .bird--7:after,
+.wrapper-no4 .bird--7:before,
+.wrapper-no4 .bird--8,
+.wrapper-no4 .bird--8:after,
+.wrapper-no4 .bird--8:before,
+.wrapper-no4 .bird--9,
+.wrapper-no4 .bird--9:after,
+.wrapper-no4 .bird--9:before,
+.wrapper-no4 .bird--10,
+.wrapper-no4 .bird--10:after,
+.wrapper-no4 .bird--10:before,
+.wrapper-no4 .bird--11,
+.wrapper-no4 .bird--11:after,
+.wrapper-no4 .bird--11:before,
+.wrapper-no4 .bird--12,
+.wrapper-no4 .bird--12:after,
+.wrapper-no4 .bird--12:before,
+.wrapper-no4 .bird--13,
+.wrapper-no4 .bird--13:after,
+.wrapper-no4 .bird--13:before,
+.wrapper-no4 .bird--14,
+.wrapper-no4 .bird--14:after,
+.wrapper-no4 .bird--14:before,
+.wrapper-no4 .bird--15,
+.wrapper-no4 .bird--15:after,
+.wrapper-no4 .bird--15:before,
+.wrapper-no4 .bird--16,
+.wrapper-no4 .bird--16:after,
+.wrapper-no4 .bird--16:before,
+.wrapper-no4 .bird--17,
+.wrapper-no4 .bird--17:after,
+.wrapper-no4 .bird--17:before,
+.wrapper-no4 .bird--18,
+.wrapper-no4 .bird--18:after,
+.wrapper-no4 .bird--18:before,
+.wrapper-no4 .bird--19,
+.wrapper-no4 .bird--19:after,
+.wrapper-no4 .bird--19:before,
+.wrapper-no4 .bird--20,
+.wrapper-no4 .bird--20:after,
+.wrapper-no4 .bird--20:before,
+.wrapper-no4 .bird--21,
+.wrapper-no4 .bird--21:after,
+.wrapper-no4 .bird--21:before,
+.wrapper-no4 .bird--22,
+.wrapper-no4 .bird--22:after,
+.wrapper-no4 .bird--22:before,
+.wrapper-no4 .bird--23,
+.wrapper-no4 .bird--23:after,
+.wrapper-no4 .bird--23:before,
+.wrapper-no4 .bird--24,
+.wrapper-no4 .bird--24:after,
+.wrapper-no4 .bird--24:before,
+.wrapper-no4 .bird--25,
+.wrapper-no4 .bird--25:after,
+.wrapper-no4 .bird--25:before,
+.wrapper-no4 .bird--26,
+.wrapper-no4 .bird--26:after,
+.wrapper-no4 .bird--26:before,
+.wrapper-no4 .bird--27,
+.wrapper-no4 .bird--27:after,
+.wrapper-no4 .bird--27:before,
+.wrapper-no4 .bird--28,
+.wrapper-no4 .bird--28:after,
+.wrapper-no4 .bird--28:before,
+.wrapper-no4 .bird--29,
+.wrapper-no4 .bird--29:after,
+.wrapper-no4 .bird--29:before,
+.wrapper-no4 .bird--30,
+.wrapper-no4 .bird--30:after,
+.wrapper-no4 .bird--30:before {
+  opacity: 1;
+  display: block;
+  position: absolute;
+  background-image: url('../images/nbirds.svg');
+  background-size: auto 100%;
+  width: 60px;
+  height: 33px;
+  top: 0;
+  left: 0;
+  -webkit-animation-name: fly-cycle;
+  animation-name: fly-cycle;
+  -webkit-animation-timing-function: steps(3);
+  animation-timing-function: steps(3);
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+.wrapper-no4 .bird--1:after,
+.wrapper-no4 .bird--1:before,
+.wrapper-no4 .bird--2:after,
+.wrapper-no4 .bird--2:before,
+.wrapper-no4 .bird--4:after,
+.wrapper-no4 .bird--4:before,
+.wrapper-no4 .bird--5:after,
+.wrapper-no4 .bird--5:before,
+.wrapper-no4 .bird--7:after,
+.wrapper-no4 .bird--7:before,
+.wrapper-no4 .bird--8:after,
+.wrapper-no4 .bird--8:before,
+.wrapper-no4 .bird--10:after,
+.wrapper-no4 .bird--10:before,
+.wrapper-no4 .bird--11:after,
+.wrapper-no4 .bird--11:before,
+.wrapper-no4 .bird--13:after,
+.wrapper-no4 .bird--13:before,
+.wrapper-no4 .bird--14:after,
+.wrapper-no4 .bird--14:before,
+.wrapper-no4 .bird--16:after,
+.wrapper-no4 .bird--16:before,
+.wrapper-no4 .bird--17:after,
+.wrapper-no4 .bird--17:before,
+.wrapper-no4 .bird--18,
+.wrapper-no4 .bird--18:after,
+.wrapper-no4 .bird--18:before,
+.wrapper-no4 .bird--19,
+.wrapper-no4 .bird--19:after,
+.wrapper-no4 .bird--19:before,
+.wrapper-no4 .bird--20:after,
+.wrapper-no4 .bird--20:before,
+.wrapper-no4 .bird--21,
+.wrapper-no4 .bird--21:after,
+.wrapper-no4 .bird--21:before,
+.wrapper-no4 .bird--22,
+.wrapper-no4 .bird--22:after,
+.wrapper-no4 .bird--22:before,
+.wrapper-no4 .bird--23,
+.wrapper-no4 .bird--23:after,
+.wrapper-no4 .bird--23:before,
+.wrapper-no4 .bird--24,
+.wrapper-no4 .bird--24:after,
+.wrapper-no4 .bird--24:before,
+.wrapper-no4 .bird--25,
+.wrapper-no4 .bird--25:after,
+.wrapper-no4 .bird--25:before,
+.wrapper-no4 .bird--26,
+.wrapper-no4 .bird--26:after,
+.wrapper-no4 .bird--26:before,
+.wrapper-no4 .bird--27,
+.wrapper-no4 .bird--27:after,
+.wrapper-no4 .bird--27:before,
+.wrapper-no4 .bird--28,
+.wrapper-no4 .bird--28:after,
+.wrapper-no4 .bird--28:before,
+.wrapper-no4 .bird--29,
+.wrapper-no4 .bird--29:after,
+.wrapper-no4 .bird--29:before,
+.wrapper-no4 .bird--30,
+.wrapper-no4 .bird--30:after,
+.wrapper-no4 .bird--30:before {
+  width: 30px;
+  height: 33px;
+  top: -8px;
+  left: 8px;
+  z-index: -100;
+}
+
+.wrapper-no4 .bird--21,
+.wrapper-no4 .bird--22,
+.wrapper-no4 .bird--23,
+.wrapper-no4 .bird--24,
+.wrapper-no4 .bird--25,
+.wrapper-no4 .bird--26,
+.wrapper-no4 .bird--27,
+.wrapper-no4 .bird--28,
+.wrapper-no4 .bird--29 {
+  top: 3px;
+  left: 10px;
+}
+
+.wrapper-no4 .bird--22,
+.wrapper-no4 .bird--25,
+.wrapper-no4 .bird--28 {
+  top: 25px;
+}
+
+.wrapper-no4 .bird--23,
+.wrapper-no4 .bird--26,
+.wrapper-no4 .bird--29 {
+  top: 45px;
+}
+
+.wrapper-no4 .bird--24,
+.wrapper-no4 .bird--25,
+.wrapper-no4 .bird--26 {
+  left: 133px;
+}
+
+.wrapper-no4 .bird--27,
+.wrapper-no4 .bird--28,
+.wrapper-no4 .bird--29 {
+  left: 225px;
+}
+
+.wrapper-no4 .bird--18 {
+  top: 0;
+  left: 0;
+}
+
+.wrapper-no4 .bird {
+  top: 3px;
+  left: 10px;
+}
+
+.wrapper-no4 .bird--18:after,
+.wrapper-no4 .bird--18:before {
+  left: -20px;
+}
+
+.wrapper-no4 .bird--19:after,
+.wrapper-no4 .bird--19:before {
+  left: -10px;
+}
+
+.wrapper-no4 .bird--1:before,
+.wrapper-no4 .bird--4:before,
+.wrapper-no4 .bird--7:before,
+.wrapper-no4 .bird--10:before,
+.wrapper-no4 .bird--13:before,
+.wrapper-no4 .bird--16:before,
+.wrapper-no4 .bird--19:before {
+  top: 18px;
+}
+
+.wrapper-no4 .bird--2:after,
+.wrapper-no4 .bird--5:after,
+.wrapper-no4 .bird--8:after,
+.wrapper-no4 .bird--11:after,
+.wrapper-no4 .bird--14:after,
+.wrapper-no4 .bird--17:after,
+.wrapper-no4 .bird--20:after {
+  top: -18px;
+  left: 12px;
+}
+
+.wrapper-no4 .bird--20:after,
+.wrapper-no4 .bird--20:before,
+.wrapper-no4 .bird--21:after {
+  left: 27px;
+}
+
+.wrapper-no4 .bird--2:before,
+.wrapper-no4 .bird--5:before,
+.wrapper-no4 .bird--8:before,
+.wrapper-no4 .bird--11:before,
+.wrapper-no4 .bird--14:before,
+.wrapper-no4 .bird--17:before,
+.wrapper-no4 .bird--20:before {
+  top: -36px;
+  left: 12px;
+}
+
+.wrapper-no4 .bird--21:before,
+.wrapper-no4 .bird--22:before,
+.wrapper-no4 .bird--23:before,
+.wrapper-no4 .bird--24:before,
+.wrapper-no4 .bird--25:before,
+.wrapper-no4 .bird--26:before {
+  top: 10px;
+  left: 45px;
+}
+
+.wrapper-no4 .bird--21:after,
+.wrapper-no4 .bird--22:after,
+.wrapper-no4 .bird--23:after,
+.wrapper-no4 .bird--24:after,
+.wrapper-no4 .bird--25:after,
+.wrapper-no4 .bird--26:after,
+.wrapper-no4 .bird--27:after,
+.wrapper-no4 .bird--28:after,
+.wrapper-no4 .bird--29:after {
+  left: 10px;
+  top: 4px;
+}
+
+.wrapper-no4 .bird--27:before,
+.wrapper-no4 .bird--28:before,
+.wrapper-no4 .bird--29:before {
+  left: -45px;
+  top: 10px;
+}
+
+.wrapper-no4 .bird:before,
+.wrapper-no4 .bird:after,
+.wrapper-no4 .bird--1:after,
+.wrapper-no4 .bird--1:before,
+.wrapper-no4 .bird--2:before,
+.wrapper-no4 .bird--2:after,
+.wrapper-no4 .bird--3:after,
+.wrapper-no4 .bird--3:before,
+.wrapper-no4 .bird--4:after,
+.wrapper-no4 .bird--4:before,
+.wrapper-no4 .bird--5:after,
+.wrapper-no4 .bird--5:before,
+.wrapper-no4 .bird--6:after,
+.wrapper-no4 .bird--6:before,
+.wrapper-no4 .bird--7:after,
+.wrapper-no4 .bird--7:before,
+.wrapper-no4 .bird--8:after,
+.wrapper-no4 .bird--8:before,
+.wrapper-no4 .bird--9:after,
+.wrapper-no4 .bird--9:before,
+.wrapper-no4 .bird--10:after,
+.wrapper-no4 .bird--10:before,
+.wrapper-no4 .bird--11:after,
+.wrapper-no4 .bird--11:before,
+.wrapper-no4 .bird--12:after,
+.wrapper-no4 .bird--12:before,
+.wrapper-no4 .bird--13:after,
+.wrapper-no4 .bird--13:before,
+.wrapper-no4 .bird--14:after,
+.wrapper-no4 .bird--14:before,
+.wrapper-no4 .bird--15:after,
+.wrapper-no4 .bird--15:before,
+.wrapper-no4 .bird--16:after,
+.wrapper-no4 .bird--16:before,
+.wrapper-no4 .bird--17:after,
+.wrapper-no4 .bird--17:before,
+.wrapper-no4 .bird--18:after,
+.wrapper-no4 .bird--18:before,
+.wrapper-no4 .bird--19:after,
+.wrapper-no4 .bird--19:before,
+.wrapper-no4 .bird--20:after,
+.wrapper-no4 .bird--20:before,
+.wrapper-no4 .bird--21:after,
+.wrapper-no4 .bird--21:before,
+.wrapper-no4 .bird--22:after,
+.wrapper-no4 .bird--22:before,
+.wrapper-no4 .bird--23:after,
+.wrapper-no4 .bird--23:before,
+.wrapper-no4 .bird--24:after,
+.wrapper-no4 .bird--24:before,
+.wrapper-no4 .bird--25:after,
+.wrapper-no4 .bird--25:before,
+.wrapper-no4 .bird--26:after,
+.wrapper-no4 .bird--26:before,
+.wrapper-no4 .bird--27:after,
+.wrapper-no4 .bird--27:before,
+.wrapper-no4 .bird--28:after,
+.wrapper-no4 .bird--28:before,
+.wrapper-no4 .bird--29:after,
+.wrapper-no4 .bird--29:before,
+.wrapper-no4 .bird--30:after,
+.wrapper-no4 .bird--30:before {
+  content: "";
+}
+
+.wrapper-no4 .bird:before,
+.wrapper-no4 .bird--3:before,
+.wrapper-no4 .bird--12:before,
+.wrapper-no4 .bird--15:before,
+.wrapper-no4 .bird--6:before,
+.wrapper-no4 .bird--9:before,
+.wrapper-no4 .bird--18:before {
+  top: 10px;
+}
+
+.wrapper-no4 .bird:after,
+.wrapper-no4 .bird--6:after,
+.wrapper-no4 .bird--12:after,
+.wrapper-no4 .bird--15:after,
+.wrapper-no4 .bird--9:after,
+.wrapper-no4 .bird--18:after {
+  top: 35px;
+}
+
+.wrapper-no4 .bird--3:after {
+  left: -10px;
+}
+
+.wrapper-no4 .bird--3:after {
+  top: 40px;
+}
+
+.wrapper-no4 .bird--1,
+.wrapper-no4 .bird--4,
+.wrapper-no4 .bird--7,
+.wrapper-no4 .bird--10,
+.wrapper-no4 .bird--13,
+.wrapper-no4 .bird--16,
+.wrapper-no4 .bird--19 {
+  top: 25px;
+}
+
+.wrapper-no4 .bird--2 {
+  top: 45px;
+  left: 10px;
+}
+
+.wrapper-no4 .bird--5 {
+  top: 47px;
+  left: 25px;
+}
+
+.wrapper-no4 .bird--8,
+.wrapper-no4 .bird--11,
+.wrapper-no4 .bird--14,
+.wrapper-no4 .bird--17,
+.wrapper-no4 .bird--20 {
+  top: 50px;
+}
+
+.wrapper-no4 .bird--3,
+.wrapper-no4 .bird--4 {
+  left: 59px;
+}
+
+.wrapper-no4 .bird--6,
+.wrapper-no4 .bird--7,
+.wrapper-no4 .bird--8 {
+  left: 118px;
+}
+
+.wrapper-no4 .bird--9,
+.wrapper-no4 .bird--10,
+.wrapper-no4 .bird--11 {
+  left: 177px;
+}
+
+.wrapper-no4 .bird--12,
+.wrapper-no4 .bird--13,
+.wrapper-no4 .bird--14 {
+  left: 225px;
+}
+
+.wrapper-no4 .bird--15,
+.wrapper-no4 .bird--16,
+.wrapper-no4 .bird--17 {
+  left: 206.5px;
+}
+
+.wrapper-no4 .bird--20 {
+  left: 108px;
+}
+
+.wrapper-no4 .bird--18,
+.wrapper-no4 .bird--19 {
+  left: 137.5px;
+}
+
+.wrapper-no4 .bird--30,
+.wrapper-no4 .bird--30:after,
+.wrapper-no4 .bird--30:before {
+  left: 118px;
+  top: 0;
+}
+
+.wrapper-no4 .bird--30:before {
+  top: 25px;
+}
+
+.wrapper-no4 .bird--30:after {
+  top: 20px;
+}
+
+.wrapper-no4 .active .bird,
+.wrapper-no4 .active .bird:before,
+.wrapper-no4 .active .bird--3,
+.wrapper-no4 .active .bird--4,
+.wrapper-no4 .active .bird--4:after,
+.wrapper-no4 .active .bird--4:before,
+.wrapper-no4 .active .bird--9,
+.wrapper-no4 .active .bird--9:after,
+.wrapper-no4 .active .bird--13,
+.wrapper-no4 .active .bird--13:after,
+.wrapper-no4 .active .bird--13:before,
+.wrapper-no4 .active .bird--15,
+.wrapper-no4 .active .bird--16,
+.wrapper-no4 .active .bird--18,
+.wrapper-no4 .active .bird--21,
+.wrapper-no4 .active .bird--21:after,
+.wrapper-no4 .active .bird--27:before,
+.wrapper-no4 .active .bird--24,
+.wrapper-no4 .active .bird--24:after,
+.wrapper-no4 .active .bird--24:before,
+.wrapper-no4 .active .bird--27,
+.wrapper-no4 .active .bird--27:after,
+.wrapper-no4 .active .bird--27:before,
+.wrapper-no4 .active .bird--30:before,
+.wrapper-no4 .button-bird:hover .bird,
+.wrapper-no4 .button-bird:hover .bird:before,
+.wrapper-no4 .button-bird:hover .bird--3,
+.wrapper-no4 .button-bird:hover .bird--4,
+.wrapper-no4 .button-bird:hover .bird--4:after,
+.wrapper-no4 .button-bird:hover .bird--4:before,
+.wrapper-no4 .button-bird:hover .bird--9,
+.wrapper-no4 .button-bird:hover .bird--9:after,
+.wrapper-no4 .button-bird:hover .bird--13,
+.wrapper-no4 .button-bird:hover .bird--13:after,
+.wrapper-no4 .button-bird:hover .bird--13:before,
+.wrapper-no4 .button-bird:hover .bird--15,
+.wrapper-no4 .button-bird:hover .bird--16,
+.wrapper-no4 .button-bird:hover .bird--18,
+.wrapper-no4 .button-bird:hover .bird--21,
+.wrapper-no4 .button-bird:hover .bird--21:after,
+.wrapper-no4 .button-bird:hover .bird--27:before,
+.wrapper-no4 .button-bird:hover .bird--24,
+.wrapper-no4 .button-bird:hover .bird--24:after,
+.wrapper-no4 .button-bird:hover .bird--24:before,
+.wrapper-no4 .button-bird:hover .bird--27,
+.wrapper-no4 .button-bird:hover .bird--27:after,
+.wrapper-no4 .button-bird:hover .bird--27:before,
+.wrapper-no4 .button-bird:hover .bird--30:before {
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-delay: -0.5s;
+  animation-delay: -0.5s;
+}
+
+.wrapper-no4 .active .bird--1,
+.wrapper-no4 .active .bird--1:after,
+.wrapper-no4 .active .bird--3:before,
+.wrapper-no4 .active .bird--5,
+.wrapper-no4 .active .bird--5:after,
+.wrapper-no4 .active .bird--5:before,
+.wrapper-no4 .active .bird--7,
+.wrapper-no4 .active .bird--7:after,
+.wrapper-no4 .active .bird--7:before,
+.wrapper-no4 .active .bird--9:before,
+.wrapper-no4 .active .bird--10,
+.wrapper-no4 .active .bird--10:after,
+.wrapper-no4 .active .bird--10:before,
+.wrapper-no4 .active .bird--14,
+.wrapper-no4 .active .bird--14:after,
+.wrapper-no4 .active .bird--14:before,
+.wrapper-no4 .active .bird--17,
+.wrapper-no4 .active .bird--17:after,
+.wrapper-no4 .active .bird--17:before,
+.wrapper-no4 .active .bird--19,
+.wrapper-no4 .active .bird--19:after,
+.wrapper-no4 .active .bird--19:before,
+.wrapper-no4 .active .bird--18:after,
+.wrapper-no4 .active .bird--22,
+.wrapper-no4 .active .bird--22:after,
+.wrapper-no4 .active .bird--22:before,
+.wrapper-no4 .active .bird--25,
+.wrapper-no4 .active .bird--25:after,
+.wrapper-no4 .active .bird--25:before,
+.wrapper-no4 .active .bird--28,
+.wrapper-no4 .active .bird--28:after,
+.wrapper-no4 .active .bird--28:before,
+.wrapper-no4 .active .bird--30:after,
+.wrapper-no4 .button-bird:hover .bird--1,
+.wrapper-no4 .button-bird:hover .bird--1:after,
+.wrapper-no4 .button-bird:hover .bird--3:before,
+.wrapper-no4 .button-bird:hover .bird--5,
+.wrapper-no4 .button-bird:hover .bird--5:after,
+.wrapper-no4 .button-bird:hover .bird--5:before,
+.wrapper-no4 .button-bird:hover .bird--7,
+.wrapper-no4 .button-bird:hover .bird--7:after,
+.wrapper-no4 .button-bird:hover .bird--7:before,
+.wrapper-no4 .button-bird:hover .bird--9:before,
+.wrapper-no4 .button-bird:hover .bird--10,
+.wrapper-no4 .button-bird:hover .bird--10:after,
+.wrapper-no4 .button-bird:hover .bird--10:before,
+.wrapper-no4 .button-bird:hover .bird--14,
+.wrapper-no4 .button-bird:hover .bird--14:after,
+.wrapper-no4 .button-bird:hover .bird--14:before,
+.wrapper-no4 .button-bird:hover .bird--17,
+.wrapper-no4 .button-bird:hover .bird--17:after,
+.wrapper-no4 .button-bird:hover .bird--17:before,
+.wrapper-no4 .button-bird:hover .bird--19,
+.wrapper-no4 .button-bird:hover .bird--19:after,
+.wrapper-no4 .button-bird:hover .bird--19:before,
+.wrapper-no4 .button-bird:hover .bird--18:after,
+.wrapper-no4 .button-bird:hover .bird--22,
+.wrapper-no4 .button-bird:hover .bird--22:after,
+.wrapper-no4 .button-bird:hover .bird--22:before,
+.wrapper-no4 .button-bird:hover .bird--25,
+.wrapper-no4 .button-bird:hover .bird--25:after,
+.wrapper-no4 .button-bird:hover .bird--25:before,
+.wrapper-no4 .button-bird:hover .bird--28,
+.wrapper-no4 .button-bird:hover .bird--28:after,
+.wrapper-no4 .button-bird:hover .bird--28:before,
+.wrapper-no4 .button-bird:hover .bird--30:after {
+  -webkit-animation-duration: 0.7s;
+  animation-duration: 0.7s;
+  -webkit-animation-delay: -0.5s;
+  animation-delay: -0.5s;
+}
+
+.wrapper-no4 .active .bird:after,
+.wrapper-no4 .active .bird--1:before,
+.wrapper-no4 .active .bird--2,
+.wrapper-no4 .active .bird--2:before,
+.wrapper-no4 .active .bird--2:after,
+.wrapper-no4 .active .bird--3:after,
+.wrapper-no4 .active .bird--6,
+.wrapper-no4 .active .bird--6:after,
+.wrapper-no4 .active .bird--6:before,
+.wrapper-no4 .active .bird--8,
+.wrapper-no4 .active .bird--8:after,
+.wrapper-no4 .active .bird--8:before,
+.wrapper-no4 .active .bird--11,
+.wrapper-no4 .active .bird--11:after,
+.wrapper-no4 .active .bird--11:before,
+.wrapper-no4 .active .bird--12,
+.wrapper-no4 .active .bird--12:after,
+.wrapper-no4 .active .bird--12:before,
+.wrapper-no4 .active .bird--16,
+.wrapper-no4 .active .bird--16:after,
+.wrapper-no4 .active .bird--16:before,
+.wrapper-no4 .active .bird--20,
+.wrapper-no4 .active .bird--20:after,
+.wrapper-no4 .active .bird--20:before,
+.wrapper-no4 .active .bird--18:before,
+.wrapper-no4 .active .bird--23,
+.wrapper-no4 .active .bird--23:after,
+.wrapper-no4 .active .bird--23:before,
+.wrapper-no4 .active .bird--26,
+.wrapper-no4 .active .bird--26:after,
+.wrapper-no4 .active .bird--26:before,
+.wrapper-no4 .active .bird--29,
+.wrapper-no4 .active .bird--29:after,
+.wrapper-no4 .active .bird--29:before,
+.wrapper-no4 .active .bird--30,
+.wrapper-no4 .button-bird:hover .bird:after,
+.wrapper-no4 .button-bird:hover .bird--1:before,
+.wrapper-no4 .button-bird:hover .bird--2,
+.wrapper-no4 .button-bird:hover .bird--2:before,
+.wrapper-no4 .button-bird:hover .bird--2:after,
+.wrapper-no4 .button-bird:hover .bird--3:after,
+.wrapper-no4 .button-bird:hover .bird--6,
+.wrapper-no4 .button-bird:hover .bird--6:after,
+.wrapper-no4 .button-bird:hover .bird--6:before,
+.wrapper-no4 .button-bird:hover .bird--8,
+.wrapper-no4 .button-bird:hover .bird--8:after,
+.wrapper-no4 .button-bird:hover .bird--8:before,
+.wrapper-no4 .button-bird:hover .bird--11,
+.wrapper-no4 .button-bird:hover .bird--11:after,
+.wrapper-no4 .button-bird:hover .bird--11:before,
+.wrapper-no4 .button-bird:hover .bird--12,
+.wrapper-no4 .button-bird:hover .bird--12:after,
+.wrapper-no4 .button-bird:hover .bird--12:before,
+.wrapper-no4 .button-bird:hover .bird--16,
+.wrapper-no4 .button-bird:hover .bird--16:after,
+.wrapper-no4 .button-bird:hover .bird--16:before,
+.wrapper-no4 .button-bird:hover .bird--20,
+.wrapper-no4 .button-bird:hover .bird--20:after,
+.wrapper-no4 .button-bird:hover .bird--20:before,
+.wrapper-no4 .button-bird:hover .bird--18:before,
+.wrapper-no4 .button-bird:hover .bird--23,
+.wrapper-no4 .button-bird:hover .bird--23:after,
+.wrapper-no4 .button-bird:hover .bird--23:before,
+.wrapper-no4 .button-bird:hover .bird--26,
+.wrapper-no4 .button-bird:hover .bird--26:after,
+.wrapper-no4 .button-bird:hover .bird--26:before,
+.wrapper-no4 .button-bird:hover .bird--29,
+.wrapper-no4 .button-bird:hover .bird--29:after,
+.wrapper-no4 .button-bird:hover .bird--29:before,
+.wrapper-no4 .button-bird:hover .bird--30 {
+  -webkit-animation-duration: 0.6s;
+  animation-duration: 0.6s;
+  -webkit-animation-delay: -0.75s;
+  animation-delay: -0.75s;
+}
+
+@-webkit-keyframes fly-cycle {
+  100% {
+    background-position: -360px 0;
+  }
+}
+
+@keyframes fly-cycle {
+  100% {
+    background-position: -360px 0;
+  }
+}
+
+@-webkit-keyframes text-fade {
+  0% {
+    color: transparent;
+    opacity: 1;
+    top: -50%;
+    left: auto;
+  }
+
+  1% {
+    color: transparent;
+    opacity: 0;
+  }
+
+  50% {
+    color: transparent;
+    opacity: 0;
+  }
+
+  100% {
+    color: #ffffff;
+    opacity: 1;
+  }
+}
+
+@keyframes text-fade {
+  0% {
+    color: transparent;
+    opacity: 1;
+    top: -50%;
+    left: auto;
+  }
+
+  1% {
+    color: transparent;
+    opacity: 0;
+  }
+
+  50% {
+    color: transparent;
+    opacity: 0;
+  }
+
+  100% {
+    color: #ffffff;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes feather-fade {
+  0% {
+    top: -100px;
+    opacity: 0;
+  }
+
+  25% {
+    transform: rotate(10deg);
+    left: 30%;
+  }
+
+  50% {
+    transform: rotate(-5deg);
+    opacity: 1;
+    left: 45%;
+  }
+
+  75% {
+    transform: rotate(10deg);
+    left: 32%;
+  }
+
+  100% {
+    transform: rotate(0deg);
+    opacity: 1;
+    top: 12px;
+    left: 43%;
+  }
+}
+
+@keyframes feather-fade {
+  0% {
+    top: -100px;
+    opacity: 0;
+  }
+
+  25% {
+    transform: rotate(10deg);
+    left: 30%;
+  }
+
+  50% {
+    transform: rotate(-5deg);
+    opacity: 1;
+    left: 45%;
+  }
+
+  75% {
+    transform: rotate(10deg);
+    left: 32%;
+  }
+
+  100% {
+    transform: rotate(0deg);
+    opacity: 1;
+    top: 12px;
+    left: 43%;
+  }
+}
+
+:root {
+  --color-surface-white: #fffce1;
+  --color-just-black: #0e100f;
+
+}
+
+.button {
+  align-items: center;
+  background: 0 0;
+  border: none;
+  border-radius: 6.25rem;
+  color: var(--button-color, var(--button-stroke));
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 1.2rem;
+  font-weight: 600;
+  gap: .363636em;
+  justify-content: center;
+  letter-spacing: -.01em;
+  line-height: 1.04545;
+  overflow: hidden;
+  padding: .9375rem 1.5rem;
+  position: relative;
+  text-decoration: none
+}
+
+@media only screen and (max-width:39.9375rem) {
+  .button {
+    width: 100%
+  }
+}
+
+.button.button--stroke:hover {
+  color: var(--button-hoverColor, var(--button-stroke))
+}
+
+
+.button--stroke:after,
+.button__border-gradient {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0
+}
+
+.button--stroke:after {
+  border: .125rem solid var(--button-stroke);
+  border-radius: 2rem;
+  content: "";
+  pointer-events: none
+}
+
+.button--small {
+  font-size: .8125rem;
+  gap: .5rem;
+  padding: .8125rem 1.5rem
+}
+
+.button__flair {
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 0
+}
+
+.button--stroke .button__flair {
+  transform: scale(0);
+  transform-origin: 0 0;
+  will-change: transform
+}
+
+.button--fill .button__flair {
+  opacity: 0;
+  will-change: opacity
+}
+
+.button__flair:before {
+  aspect-ratio: 1;
+  background: url(../images/noise-button-fd0bf638.png), var(--button-stroke);
+  border-radius: 50%;
+  content: "";
+  display: block;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  transform: translate(-50%, -50%);
+  width: 170%
+}
+
+.button--fill .button__flair:before {
+  background-attachment: scroll, scroll;
+  background-clip: border-box, border-box;
+  background-color: transparent;
+  background-image: url(../images/noise-button-fd0bf638.png), linear-gradient(113deg, hsla(0, 0%, 100%, .02) 24.91%, hsla(0, 0%, 100%, .8) 57.81%, hsla(0, 0%, 100%, .26) 67.47%);
+  background-origin: padding-box, padding-box;
+  background-position: 0 0, 0 0;
+  background-repeat: repeat, repeat;
+  background-size: cover;
+  filter: blur(.5rem)
+}
+
+.button__label {
+  position: relative;
+  text-align: center;
+  transition: color 50ms var(--ease-in-out-quart);
+}
+
+@keyframes butt_zoom {
+  0% {
+    transform: scale(1);
+    color: rgb(0, 0, 0);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+    color: var(--color-body);
+  }
+}
+
+.button--stroke:active {
+  animation: butt_zoom 0.5s ease-in;
+}
+
+.button__icon {
+  background-color: currentColor;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+  height: 1.5rem;
+  transition: color 50ms var(--ease-in-out-quart);
+  width: 1.5rem
+}
+
+.button--stroke:hover .button__icon {
+  transition: color .15s var(--ease-in-out-quart)
+}
+
+.button--small .button__icon {
+  height: 1rem;
+  width: 1rem
+}
+
+#overlay {
+  position: fixed;
+  z-index: 99999;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.6s ease;
+}
+
+#progress {
+  height: 2px;
+  background: #fff;
+  position: absolute;
+  width: 0;
+  top: 60%;
+  transition: 0.3s;
+}
+
+#progstat {
+  font-size: 2rem;
+  letter-spacing: 5px;
+  color: #fff;
+}

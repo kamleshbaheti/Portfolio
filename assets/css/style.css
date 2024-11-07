@@ -11,11 +11,16 @@
   --color-just-black: #0e100f;
 }
 
+
 * {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+body {
+  cursor: url('../images/arrow.png'), auto;
 }
 
 ::-webkit-scrollbar {

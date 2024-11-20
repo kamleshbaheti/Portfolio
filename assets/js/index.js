@@ -17350,9 +17350,9 @@ const clickSound = new Audio("./assets/sound/click.wav");
       button.addEventListener('click', playProfileSound);
     });
 
-    // document.addEventListener('contextmenu', function (e) {
-    //   e.preventDefault();
-    // });
+    document.addEventListener('contextmenu', function (e) {
+      e.preventDefault();
+    });
 
 let originalTitle = document.title;
 const titles = [

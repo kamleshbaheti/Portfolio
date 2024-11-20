@@ -17329,7 +17329,7 @@ const clickSound = new Audio("./assets/sound/click.wav");
     }
 
     function playSentSound() {
-      sentSound.currentTime = 0;
+      sendSound.currentTime = 0;
       sendSound.play();
     }
 
@@ -17346,13 +17346,13 @@ const clickSound = new Audio("./assets/sound/click.wav");
       button.addEventListener('click', playlinkSound);
     });
 
-    document.querySelectorAll('.home-tools__button').forEach(button => {
+    document.querySelectorAll('.button--stroke').forEach(button => {
       button.addEventListener('click', playProfileSound);
     });
 
-    document.addEventListener('contextmenu', function (e) {
-      e.preventDefault();
-    });
+    // document.addEventListener('contextmenu', function (e) {
+    //   e.preventDefault();
+    // });
 
 let originalTitle = document.title;
 const titles = [
@@ -17404,14 +17404,13 @@ document.addEventListener("DOMContentLoaded", function () {
 			if (el.classList.contains("active")) {
 				playSentSound();
 				text.innerHTML = "Sent!";
-
 				setTimeout(function () {
 					let countdown = 2;
 					const interval = setInterval(function () {
 						fe.style.display = "none";
 						text.innerHTML = `Refreshing in ${countdown}..`;
 						countdown--;
-
+		
 						if (countdown < 0) {
 							clearInterval(interval);
 							window.location.href = document.querySelector(
@@ -17421,12 +17420,13 @@ document.addEventListener("DOMContentLoaded", function () {
 					}, 1000);
 				}, 2000);
 			}
-		} else if (!name || !email || !message || !emailPattern.test(email)) {
-			playContactFailSound();
-			text.innerHTML = "Hm..Something is wrong";
-		}
+		} 
 		if (!name && !email && !message) {
 			text.innerHTML = "Reach Out!";
+		}
+		else if (!name || !email || !message || !emailPattern.test(email)) {
+			playContactFailSound();
+			text.innerHTML = "Hm..Something is wrong";
 		}
 	});
 });

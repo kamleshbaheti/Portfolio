@@ -1,26 +1,36 @@
 :root {
-  --color-body: #F0EDCF;
-  --color-heading: #eef3db;
+  --color-body: #ffffff;
+  --color-heading: #ffffff;
   --color-base: #2e2e2e;
   --color-base2: #000000;
   --color-brand: #40A2D8;
   --color-brand2: #deff58;
   --sidbar-width: 240px;
   --font-base: "Caveat";
-  --color-surface-white: #fffce1;
+  --color-surface-white: #ffffff;
   --color-just-black: #0e100f;
 }
 
-
 * {
+  cursor: none;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
 }
 
-body {
-  cursor: url('../images/arrow.png'), auto;
+.cursor {
+  --size: 25px;
+  --body-color: #ffffff;
+  --outline-color: #000000;
+}
+
+.cursor .inner {
+  fill: var(--body-color);
+}
+
+.cursor .outer {
+  fill: var(--outline-color);
 }
 
 ::-webkit-scrollbar {
@@ -153,24 +163,27 @@ img {
 }
 
 .navbar .nav-link {
-  font-size: 1.6rem;
+  font-size: 27px;
   font-weight: 700;
   color: var(--color-body);
+  transition: transform 0.1s ease-in-out;
 }
 
 .navbar .nav-link:hover {
   color: var(--color-brand);
+  transform: scale(1.26);
+  font-weight: 1000;
 }
 
 
-@keyframes highlight {
+@keyframes highlights {
   0% {
     transform: scale(1);
     color: white;
   }
 
   50% {
-    transform: scale(1.4);
+    transform: scale(1.26);
   }
 
   100% {
@@ -180,7 +193,7 @@ img {
 }
 
 .nav-link:active {
-  animation: highlight 0.5s ease-in;
+  animation: highlights 0.2s ease;
 }
 
 @media (min-width: 992px) {
@@ -241,6 +254,11 @@ img {
   width: 100%;
 }
 
+.card-custom {
+  border-radius: 3rem;
+  position:static;
+}
+
 .card-custom .card-custom-image {
   overflow: hidden;
 }
@@ -250,14 +268,18 @@ img {
 }
 
 .card-custom:hover .card-custom-image img {
-  transform: scale(1.2);
+  transform: scale(1.05);
 }
 
 #footer .form-control {
   background-color: var(--color-base);
   border-color: var(--color-base);
-  color: var(--color-body);
+  color: white;
   border-radius: 1rem;
+  width: 100%;
+  transition: all 0.25s cubic-bezier(0.2, 0.61, 0.56, 0.71);
+  cursor: text;
+  font-family:'Courier New', Courier, monospace;
 }
 
 #footer .form-control:focus {
@@ -265,8 +287,16 @@ img {
   box-shadow: none;
 }
 
+#footer .form-control:hover {
+  box-shadow: 0 0 0 1.5px #40a3d8a0, 0px 0px 25px -15px #000;
+}
+
 #footer .form-control::placeholder {
   color: #f8f8f857;
+}
+
+#footer .form-control:active {
+  transform: scale(.98);
 }
 
 #footer input.form-control {
@@ -288,6 +318,10 @@ ul {
 .social_icons .icon-content {
   margin: 0 5px;
   position: relative;
+}
+
+.icon-content:active {
+  transform: scale(.85);
 }
 
 .social_icons .icon-content .tooltip {
@@ -364,7 +398,7 @@ ul {
 
 .social_icons .icon-content a[data-social="linkedin"] .filled,
 .social_icons .icon-content a[data-social="linkedin"]~.tooltip {
-  background-color: #0274b3;
+  background-color: #0A66C2;
 }
 
 .social_icons .icon-content a[data-social="github"] .filled,
@@ -414,12 +448,12 @@ ul {
 }
 
 .zoom-text {
-  transition: transform 0.3s ease;
+  transition: transform 0.2s ease;
   display: inline-block;
 }
 
 .zoom-text:hover {
-  transform: scale(1.2);
+  transform: scale(1.18);
 }
 
 .profiles {
@@ -427,9 +461,8 @@ ul {
   padding-bottom: 0.8rem;
 }
 
-
 .icon-fade {
-  transition: opacity 0.3s ease;
+  transition: opacity 0.1s ease;
 }
 
 .text-fade {
@@ -446,6 +479,7 @@ ul {
 
 .zoom-text:hover .text-fade {
   opacity: 1;
+  font-weight: 600;
 }
 
 @keyframes animate {
@@ -811,7 +845,6 @@ ul {
   border-radius: 3rem;
   box-shadow: 0 0 0 #fec1958c;
   transition: all .3s ease-in-out;
-  cursor: pointer;
 }
 
 .star-1 {
@@ -884,6 +917,7 @@ ul {
   background: transparent;
   color: var(--color);
   box-shadow: 0 0 15px #fec1958c;
+  transform: scale(1.05);
 }
 
 .resume_button:hover .star-1 {
@@ -963,7 +997,6 @@ button {
   color: inherit;
   width: 200px;
   height: 50px;
-  cursor: pointer;
   font-size: 16px;
   position: relative;
 }
@@ -1095,7 +1128,6 @@ button {
   border: none;
   display: flex;
   justify-content: center;
-  cursor: pointer;
 }
 
 .wrapper-no4 .button-bird__text {
@@ -1104,9 +1136,13 @@ button {
   color: #000000;
   position: absolute;
   z-index: 1000;
-  top: 50%;
+  top: 25%;
   margin: 0;
-  transform: translateY(-50%);
+  transition: transform 0.2s ease;
+}
+.wrapper-no4 .button-bird__text:hover {
+  transform: scale(1.2);
+  font-weight: 600;
 }
 
 .wrapper-no4 .button-bird:focus {
@@ -2120,19 +2156,12 @@ button {
   }
 }
 
-:root {
-  --color-surface-white: #fffce1;
-  --color-just-black: #0e100f;
-
-}
-
 .button {
   align-items: center;
   background: 0 0;
   border: none;
   border-radius: 6.25rem;
   color: var(--button-color, var(--button-stroke));
-  cursor: pointer;
   display: inline-flex;
   font-size: 1.2rem;
   font-weight: 600;
@@ -2143,7 +2172,8 @@ button {
   overflow: hidden;
   padding: .9375rem 1.5rem;
   position: relative;
-  text-decoration: none
+  text-decoration: none;
+  transition: transform 0.2s ease;
 }
 
 @media only screen and (max-width:39.9375rem) {
@@ -2153,7 +2183,9 @@ button {
 }
 
 .button.button--stroke:hover {
-  color: var(--button-hoverColor, var(--button-stroke))
+  color: var(--button-hoverColor, var(--button-stroke));
+  transform: scale(1.15);
+  font-weight: 600;
 }
 
 
@@ -2228,7 +2260,6 @@ button {
 .button__label {
   position: relative;
   text-align: center;
-  transition: color 50ms var(--ease-in-out-quart);
 }
 
 @keyframes butt_zoom {

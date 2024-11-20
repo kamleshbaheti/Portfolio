@@ -307,8 +307,9 @@ pre code {
 
 code {
     font-size: .875em;
-    color: var(--bs-code-color);
-    word-wrap: break-word
+    /* color: var(--bs-code-color); */
+    font-weight: 400;
+    word-wrap: break-word;
 }
 
 a>code {
@@ -407,20 +408,6 @@ select:disabled {
 
 [list]:not([type=date]):not([type=datetime-local]):not([type=month]):not([type=week]):not([type=time])::-webkit-calendar-picker-indicator {
     display: none !important
-}
-
-[type=button],
-[type=reset],
-[type=submit],
-button {
-    -webkit-appearance: button
-}
-
-[type=button]:not(:disabled),
-[type=reset]:not(:disabled),
-[type=submit]:not(:disabled),
-button:not(:disabled) {
-    cursor: pointer
 }
 
 ::-moz-focus-inner {
@@ -2613,7 +2600,6 @@ textarea.form-control-lg {
     -moz-appearance: none;
     appearance: none;
     -webkit-print-color-adjust: exact;
-    color-adjust: exact;
     print-color-adjust: exact
 }
 
@@ -4542,7 +4528,8 @@ fieldset:disabled .btn {
 
     .navbar-expand-lg .navbar-collapse {
         display: flex !important;
-        flex-basis: auto
+        flex-basis: auto;
+        margin-top: 1rem;
     }
 
     .navbar-expand-lg .navbar-toggler {
@@ -12653,5 +12640,3 @@ fieldset:disabled .btn {
         display: none !important
     }
 }
-
-/*# sourceMappingURL=bootstrap.min.css.map */

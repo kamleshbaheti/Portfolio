@@ -58,7 +58,7 @@
 body {
   background-color: var(--color-base2);
   color: var(--color-body);
-  font-family: var(--font-base), cursive;
+  font-family: var(--font-base);
 }
 
 h1,
@@ -90,6 +90,7 @@ img {
 }
 
 .bg-base {
+  backdrop-filter: blur(5px);
   background-color: rgba(61, 61, 61, 0.401);
 }
 
@@ -916,17 +917,17 @@ ul {
 .resume_button:hover {
   background: transparent;
   color: var(--color);
-  box-shadow: 0 0 15px #fec1958c;
+  box-shadow: 0 0 5px #f5dd27;
   transform: scale(1.05);
 }
 
 .resume_button:hover .star-1 {
   position: absolute;
   top: -80%;
-  left: -30%;
+  left: -25%;
   width: 25px;
   height: auto;
-  filter: drop-shadow(0 0 5px #fffdef);
+  filter: drop-shadow(0 0 5px #f5dd27);
   z-index: 2;
 }
 
@@ -936,32 +937,36 @@ ul {
   left: 10%;
   width: 15px;
   height: auto;
-  filter: drop-shadow(0 0 10px #fffdef);
+  filter: drop-shadow(0 0 5px #f5dd27);
   z-index: 2;
 }
 
 .resume_button:hover .star-3 {
+  filter: drop-shadow(0 0 5px #f5dd27);
   position: absolute;
-  top: 55%;
+  top: 75%;
   left: 25%;
   width: 5px;
   height: auto;
-  filter: drop-shadow(0 0 10px #fffdef);
   z-index: 2;
 }
 
 .resume_button:hover .stars {
-  display: block;
-  filter: drop-shadow(0 0 10px #fffdef);
+  position: absolute;
+  top: 75%;
+  left: 25%;
+  width: 5px;
+  height: auto;
+  filter: drop-shadow(0 0 5px #f5dd27);
 }
 
 .resume_button:hover .star-4 {
   position: absolute;
-  top: 30%;
+  top: -10%;
   left: 80%;
   width: 8px;
   height: auto;
-  filter: drop-shadow(0 0 10px #fffdef);
+  filter: drop-shadow(0 0 5px #f5dd27);
   z-index: 2;
 }
 
@@ -971,7 +976,7 @@ ul {
   left: 115%;
   width: 15px;
   height: auto;
-  filter: drop-shadow(0 0 10px #fffdef);
+  filter: drop-shadow(0 0 5px #f5dd27);
   z-index: 2;
 }
 
@@ -981,12 +986,12 @@ ul {
   left: 60%;
   width: 5px;
   height: auto;
-  filter: drop-shadow(0 0 10px #fffdef);
+  filter: drop-shadow(0 0 5px #f5dd27);
   z-index: 2;
 }
 
 .fil0 {
-  fill: #f4df44
+  fill: var(--color);
 }
 
 button {

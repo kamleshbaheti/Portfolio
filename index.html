@@ -21,12 +21,12 @@
   <title>Kamlesh Baheti - Portfolio</title>
   <link rel="icon" type="image/x-icon" href="./assets/images/favicon.png" />
   <link rel="canonical" href="https://kamleshbaheti.github.io/Portfolio/">
-  <link rel="stylesheet" href="./assets/css/aos.css" />
   <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="./assets/css/line-awesome.min.css" />
   <link rel="stylesheet" href="./assets/css/style.css" />
+  <link  rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
   <link rel='stylesheet' href='https://unpkg.com/open-props/open-props.min.css'>
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/line-awesome/css/line-awesome.min.css">
 </head>
 
 <script>
@@ -198,7 +198,7 @@
   <!-- navbar end -->
 
   <!-- content-wrapper start -->
-  <p class="last-update">Last Update: 29-Nov-2024</p>
+  <p class="last-update">Last Update: 05-Dec-2024</p>
   <div id="content-wrapper">
     <!-- Home start -->
     <section id="home" class="full-height px-lg-5">
@@ -459,7 +459,7 @@
                   solutions. It
                   reflects my passion for building and problem-solving across various domains.
                 </p><hr>
-                <div class="home-tools__button">
+                <div>
                   <a href="https://github.com/kamleshbaheti/" class="button button--stroke rounded-5" target="_blank"
                     style="--button-stroke: var(--color-surface-white);--button-hoverColor: var(--color-just-black);"
                     data-block="button">
@@ -484,7 +484,7 @@
                   solved over 900
                   challenging problems, pushing my limits in algorithms and problem-solving daily.
                 </p><hr>
-                <div class="home-tools__button">
+                <div>
                   <a href="https://leetcode.com/kamlesh_baheti/" class="button button--stroke rounded-5" target="_blank"
                     style="--button-stroke: var(--color-surface-white);--button-hoverColor: var(--color-just-black);"
                     data-block="button">
@@ -510,7 +510,7 @@
                   skills in algorithms & data structures. Always pushing for better solutions, one challenge at a
                   time!
                 </p><hr>
-                <div class="home-tools__button">
+                <div>
                   <a href="https://www.codechef.com/users/kamleshbaheti" class="button button--stroke rounded-5"
                     target="_blank"
                     style="--button-stroke: var(--color-surface-white);--button-hoverColor: var(--color-just-black);"
@@ -564,7 +564,7 @@
                 enhanced my skills in web development and Machine Learning
                 integration for impactful and real-world applications.
               </p><hr>
-              <div class="home-tools__button" style="padding-top: .5rem;">
+              <div style="padding-top: .5rem;">
                 <a href="./assets/files/internship_certificate.pdf" 
                   class="button button--stroke rounded-5" target="_blank"
                   style="--button-stroke: var(--color-surface-white);--button-hoverColor: var(--color-just-black);"
@@ -671,7 +671,7 @@
                   Autism Detection,
                   underscoring the potential of AI in Healthcare.
                 </p><hr>
-                <div class="home-tools__button">
+                <div>
                   <a href="https://github.com/kamleshbaheti/Autism-Detection-of-Early-Childhood-Screening"
                     class="button button--stroke rounded-5" target="_blank"
                     style="--button-stroke: var(--color-surface-white);--button-hoverColor: var(--color-just-black);"
@@ -702,7 +702,7 @@
                   programming skills to create robust and reliable software solutions using the concepts of Object
                   Object-Oriented Principles.
                 </p><hr>
-                <div class="home-tools__button">
+                <div>
                   <a href="https://github.com/kamleshbaheti/Secure-Login-Account-Management-System"
                     class="button button--stroke rounded-5" target="_blank"
                     style="--button-stroke: var(--color-surface-white);--button-hoverColor: var(--color-just-black);"
@@ -734,7 +734,7 @@
                   with interactive
                   visual and auditory features.
                 </p><hr>
-                <div class="home-tools__button">
+                <div>
                   <a href="https://github.com/kamleshbaheti/Handwritten-Digit-Recognition-using-MNIST"
                     class="button button--stroke rounded-5" target="_blank"
                     style="--button-stroke: var(--color-surface-white);--button-hoverColor: var(--color-just-black);"
@@ -764,7 +764,7 @@
                   time, shutting down,
                   and restarting the system, open files and folders etc.
                 </p><hr>
-                <div class="home-tools__button">
+                <div>
                   <a href="https://github.com/kamleshbaheti/Assistant-for-PC-using-C"
                     class="button button--stroke rounded-5" target="_blank"
                     style="--button-stroke: var(--color-surface-white);--button-hoverColor: var(--color-just-black);"
@@ -952,20 +952,23 @@ c-0.9,0.1-10.3,4.9-22.6-12.3C5.9,17.7,11.8,26.9,20.8,31.6z" />
     <footer class="py-5 px-lg-5">
       <div class="container" id="contact">
         <div class="row gy-4 justify-content-between" style="position: relative;">
-          <div class="col-auto name_auther">
+          <div class="col-auto name_auther" style="margin-top: 10px;">
             <p class="mb-0" style="display: flex;">Crafted with
               <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
               <dotlottie-player 
                 src="./assets/images/passion.lottie"
                 background="transparent" 
-                speed="1" 
+                speed="1.1" 
                 style="width: 50px; height: 50px; margin-top: -1rem; " 
                 loop 
                 autoplay>
               </dotlottie-player>
                 </p>
-            <p class="mb-0">by Kamlesh Baheti</p>
-          </div>
+                <div>
+                  <span class="mb-0">by </span>
+                  <p class="mb-0" id="hoverText"></p>
+                </div>
+              </div>
 
           <div class="col-auto">
             <ul class="social_icons">

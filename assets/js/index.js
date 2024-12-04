@@ -17308,51 +17308,70 @@ export {
 };
 
 const clickSound = new Audio("./assets/sound/click.wav");
-    const contactFailSound = new Audio("./assets/sound/contact_fail.mp3");
-    const linkSound = new Audio("./assets/sound/link.mp3");
-    const sendSound = new Audio("./assets/sound/send.mp3");
-    const profileSound = new Audio("./assets/sound/profile.mp3");
+const contactFailSound = new Audio("./assets/sound/contact_fail.mp3");
+const linkSound = new Audio("./assets/sound/link.mp3");
+const sendSound = new Audio("./assets/sound/send.mp3");
+const profileSound = new Audio("./assets/sound/profile.mp3");
+const resumeSound = new Audio("./assets/sound/resume.mp3");
 
-    function playClickSound() {
-      clickSound.currentTime = 0;
-      clickSound.play();
-    }
+function playClickSound() {
+	clickSound.currentTime = 0;
+	clickSound.play();
+}
 
-    function playContactFailSound() {
-      contactFailSound.currentTime = 0;
-      contactFailSound.play();
-    }
+function playContactFailSound() {
+	contactFailSound.currentTime = 0;
+	contactFailSound.play();
+}
 
-    function playlinkSound() {
-      linkSound.currentTime = 0;
-      linkSound.play();
-    }
+function playlinkSound() {
+	linkSound.currentTime = 0;
+	linkSound.play();
+}
 
-    function playSentSound() {
-      sendSound.currentTime = 0;
-      sendSound.play();
-    }
+function playSentSound() {
+	sendSound.currentTime = 0;
+	sendSound.play();
+}
 
-    function playProfileSound() {
-      profileSound.currentTime = 0;
-      profileSound.play();
-    }
+function playProfileSound() {
+	profileSound.currentTime = 0;
+	profileSound.play();
+}
 
-    document.querySelectorAll('.nav-item').forEach(button => {
-      button.addEventListener('click', playClickSound);
-    });
+function playResumeSound() {
+	resumeSound.currentTime = 0;
+	resumeSound.play();
+}
 
-    document.querySelectorAll('.social_icons').forEach(button => {
-      button.addEventListener('click', playlinkSound);
-    });
+document.querySelectorAll(".nav-item").forEach((button) => {
+	button.addEventListener("click", playClickSound);
+});
 
-    document.querySelectorAll('.button--stroke').forEach(button => {
-      button.addEventListener('click', playProfileSound);
-    });
+document.querySelectorAll(".social_icons").forEach((button) => {
+	button.addEventListener("click", playlinkSound);
+});
 
-    document.addEventListener('contextmenu', function (e) {
-      e.preventDefault();
-    });
+document.querySelectorAll(".button--stroke").forEach((button) => {
+	button.addEventListener("click", playProfileSound);
+});
+
+document.querySelectorAll(".resume_button").forEach((button) => {
+	button.addEventListener("click", playResumeSound);
+});
+
+document.addEventListener("contextmenu", function (e) {
+	e.preventDefault();
+});
+
+document.addEventListener("keydown", function (event) {
+	if (event.ctrlKey && event.shiftKey && event.key.toLowerCase() === "i") {
+		event.preventDefault();
+	}
+	if (event.ctrlKey && event.key.toLowerCase() === "u") {
+		event.preventDefault();
+	}
+});
 
 let originalTitle = document.title;
 const titles = [
@@ -17410,7 +17429,7 @@ document.addEventListener("DOMContentLoaded", function () {
 						fe.style.display = "none";
 						text.innerHTML = `Refreshing in ${countdown}..`;
 						countdown--;
-		
+
 						if (countdown < 0) {
 							clearInterval(interval);
 							window.location.href = document.querySelector(
@@ -17420,11 +17439,10 @@ document.addEventListener("DOMContentLoaded", function () {
 					}, 1000);
 				}, 2000);
 			}
-		} 
+		}
 		if (!name && !email && !message) {
 			text.innerHTML = "Reach Out!";
-		}
-		else if (!name || !email || !message || !emailPattern.test(email)) {
+		} else if (!name || !email || !message || !emailPattern.test(email)) {
 			playContactFailSound();
 			text.innerHTML = "Hm..Something is wrong";
 		}

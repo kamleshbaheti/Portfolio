@@ -1178,14 +1178,6 @@ textarea.form-control-lg {
     --bs-navbar-brand-color: rgba(0, 0, 0, 0.9);
     --bs-navbar-brand-hover-color: rgba(0, 0, 0, 0.9);
     --bs-navbar-nav-link-padding-x: 0.5rem;
-    --bs-navbar-toggler-padding-y: 0.25rem;
-    --bs-navbar-toggler-padding-x: 0.75rem;
-    --bs-navbar-toggler-font-size: 1.25rem;
-    --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-    --bs-navbar-toggler-border-color: rgba(0, 0, 0, 0.1);
-    --bs-navbar-toggler-border-radius: 0.375rem;
-    --bs-navbar-toggler-focus-width: 0.25rem;
-    --bs-navbar-toggler-transition: box-shadow 0.15s ease-in-out;
     position: relative;
     display: flex;
     flex-wrap: wrap;
@@ -1260,45 +1252,8 @@ textarea.form-control-lg {
 .navbar-collapse {
     flex-basis: 100%;
     flex-grow: 1;
-    align-items: center
-}
-
-.navbar-toggler {
-    padding: var(--bs-navbar-toggler-padding-y) var(--bs-navbar-toggler-padding-x);
-    font-size: var(--bs-navbar-toggler-font-size);
-    line-height: 1;
-    color: var(--bs-navbar-color);
-    background-color: transparent;
-    border: var(--bs-border-width) solid var(--bs-navbar-toggler-border-color);
-    border-radius: 2rem;
-    transition: var(--bs-navbar-toggler-transition)
-}
-
-@media (prefers-reduced-motion:reduce) {
-    .navbar-toggler {
-        transition: none
-    }
-}
-
-.navbar-toggler:hover {
-    text-decoration: none
-}
-
-.navbar-toggler:focus {
-    text-decoration: none;
-    outline: 0;
-    box-shadow: 0 0 0 var(--bs-navbar-toggler-focus-width)
-}
-
-.navbar-toggler-icon {
-    display: inline-block;
-    width: 1.5em;
-    height: 1.5em;
-    vertical-align: middle;
-    background-image: var(--bs-navbar-toggler-icon-bg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100%
+    align-items: center;
+    margin-top: 3rem;
 }
 
 .navbar-nav-scroll {
@@ -1333,10 +1288,6 @@ textarea.form-control-lg {
         display: flex !important;
         flex-basis: auto
     }
-
-    .navbar-expand-sm .navbar-toggler {
-        display: none
-    }
 }
 
 @media (min-width:768px) {
@@ -1365,10 +1316,6 @@ textarea.form-control-lg {
     .navbar-expand-md .navbar-collapse {
         display: flex !important;
         flex-basis: auto
-    }
-
-    .navbar-expand-md .navbar-toggler {
-        display: none
     }
 }
 
@@ -1400,10 +1347,6 @@ textarea.form-control-lg {
         flex-basis: auto;
         margin-top: 1rem;
     }
-
-    .navbar-expand-lg .navbar-toggler {
-        display: none
-    }
 }
 
 .navbar-expand {
@@ -1433,10 +1376,6 @@ textarea.form-control-lg {
     flex-basis: auto
 }
 
-.navbar-expand .navbar-toggler {
-    display: none
-}
-
 .navbar-dark {
     --bs-navbar-color: rgba(255, 255, 255, 0.55);
     --bs-navbar-hover-color: rgba(255, 255, 255, 0.75);
@@ -1444,8 +1383,6 @@ textarea.form-control-lg {
     --bs-navbar-active-color: #fff;
     --bs-navbar-brand-color: #fff;
     --bs-navbar-brand-hover-color: #fff;
-    --bs-navbar-toggler-border-color: rgba(255, 255, 255, 0.1);
-    --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e")
 }
 
 .fixed-top {
@@ -4232,7 +4169,7 @@ display: block !important
     }
 }
 
-@media (min-width:1000px) {
+@media (min-width: 993px) {
     .d-sm-block {
         display: block !important
     }

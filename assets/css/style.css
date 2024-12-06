@@ -90,7 +90,6 @@ img {
 }
 
 .bg-base {
-  backdrop-filter: blur(5px);
   background-color: rgba(61, 61, 61, 0.401);
 }
 
@@ -102,6 +101,7 @@ img {
   justify-content: center;
   padding-top: 80px;
   padding-bottom: 80px;
+  margin-top: -6rem;
 }
 
 .full-height #home {
@@ -136,21 +136,17 @@ img {
   font-size: 3rem;
 }
 
-@media (max-width: 1200px) {
-  .iconbox-wrapper {
-    flex: 0 0 20%;
-    max-width: 20%;
-  }
-}
-
-@media (max-width: 992px) {
+@media (max-width: 993px) {
   .iconbox-wrapper {
     flex: 0 0 25%;
     max-width: 25%;
   }
+}
 
-  .navbar {
-    border-bottom-left-radius: 2rem;
+@media (max-width: 1200px) {
+  .iconbox-wrapper {
+    flex: 0 0 20%;
+    max-width: 20%;
   }
 }
 
@@ -2205,13 +2201,7 @@ button {
   padding: .9375rem 1.5rem;
   position: relative;
   text-decoration: none;
-  transition: transform 0.2s ease;
-}
-
-@media only screen and (max-width:39.9375rem) {
-  .button {
-    width: 100%
-  }
+  transition: transform 0.2s ease;  
 }
 
 .button.button--stroke:hover {
@@ -2374,4 +2364,34 @@ button {
 
 .col-auto .name_auther {
   margin-top: 10px;
+}
+
+@media (min-width: 992px) {
+  .full-height {
+    margin-top: 0rem;
+  }
+}
+
+@media (max-width: 992px) {  
+  .navbar {
+    border-bottom-left-radius: 2rem;
+    display: none;
+  }
+  
+  .button__flair {
+    display: none;
+  }
+
+  .button.button--stroke:hover {
+    color: white;
+    transform: none;
+  }
+
+  .button--stroke:active {
+    animation: none;
+  }
+  
+  .card-custom:hover .card-custom-image img {
+    transform: none;
+  }
 }

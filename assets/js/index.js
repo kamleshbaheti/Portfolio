@@ -17313,6 +17313,7 @@ const linkSound = new Audio("./assets/sound/link.mp3");
 const sendSound = new Audio("./assets/sound/send.mp3");
 const profileSound = new Audio("./assets/sound/profile.mp3");
 const resumeSound = new Audio("./assets/sound/resume.mp3");
+const skillSound = new Audio("./assets/sound/skills.mp3");
 
 function playClickSound() {
 	clickSound.currentTime = 0;
@@ -17344,6 +17345,11 @@ function playResumeSound() {
 	resumeSound.play();
 }
 
+function playSkillSound() {
+	skillSound.currentTime = 0;
+	skillSound.play();
+}
+
 document.querySelectorAll(".nav-item").forEach((button) => {
 	button.addEventListener("click", playClickSound);
 });
@@ -17358,6 +17364,38 @@ document.querySelectorAll(".button--stroke").forEach((button) => {
 
 document.querySelectorAll(".resume_button").forEach((button) => {
 	button.addEventListener("click", playResumeSound);
+});
+
+document.querySelectorAll(".iconbox").forEach((button) => {
+	skillSound.volume = 0.1;
+	button.addEventListener("mouseenter", playSkillSound);
+});
+
+let isMuted = false;
+const sounds = [
+  clickSound,
+  contactFailSound,
+  linkSound,
+  sendSound,
+  profileSound,
+  resumeSound,
+  skillSound,
+];
+
+function toggleVolume() {
+  isMuted = !isMuted;
+  sounds.forEach((sound) => {
+    sound.muted = isMuted;
+  });
+}
+
+document.querySelector(".volume-input").addEventListener("change", toggleVolume);
+
+document.addEventListener("DOMContentLoaded", () => {
+  isMuted = false;
+  sounds.forEach((sound) => {
+    sound.muted = false;
+  });
 });
 
 document.addEventListener("contextmenu", function (e) {

@@ -4172,9 +4172,38 @@ textarea.form-control-lg {
 
     .last-update {
         position: relative;
-        color: white;
+        color:  rgba(255, 255, 255, 0.549);
+        float: left;
+        padding-left: 6px;
+        font-size: 15px;
+        margin-bottom: 0rem;
+        font-family: monospace;
+    }
+    
+    .copy {
+        position: relative;
+        color: rgba(255, 255, 255, 0.549);
         float: right;
         padding-right: 6px;
-        font-size: 18px;
+        font-size: 15px;
+        margin-bottom: 0rem;
+        font-family: monospace;
+    }
+
+    .ftr {
+        margin-top: 0.5rem;
+        margin-bottom: 0.2rem;
+    }
+}
+
+@media (max-width: 993px) {
+    .ftr {
+        display: none;
+    }
+    .copy {
+        display: none;
+    }
+    .last-update {
+        display: none;
     }
 }

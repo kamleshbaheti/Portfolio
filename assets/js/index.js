@@ -17482,6 +17482,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			}
 		}
 		if (!name && !email && !message) {
+			playContactFailSound();
 			text.innerHTML = "Reach Out!";
 		} else if (!name || !email || !message || !emailPattern.test(email)) {
 			playContactFailSound();

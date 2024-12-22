@@ -1014,6 +1014,7 @@ button {
     top: 25%;
     margin: 0;
     transition: transform 0.2s ease;
+    width: 90%;
 }
 
 .wrapper-no4 .button-bird__text:hover {

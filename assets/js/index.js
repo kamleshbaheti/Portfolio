@@ -17316,38 +17316,52 @@ const resumeSound = new Audio("./assets/sound/resume.mp3");
 const skillSound = new Audio("./assets/sound/skills.mp3");
 
 function playClickSound() {
-	clickSound.currentTime = 0;
-	clickSound.play();
+    if (!isMuted) {
+        clickSound.currentTime = 0;
+        clickSound.play();
+    }
 }
 
 function playContactFailSound() {
-	contactFailSound.currentTime = 0;
-	contactFailSound.play();
+    if (!isMuted) {
+        contactFailSound.currentTime = 0;
+        contactFailSound.play();
+    }
 }
 
 function playlinkSound() {
-	linkSound.currentTime = 0;
-	linkSound.play();
+    if (!isMuted) {
+        linkSound.currentTime = 0;
+        linkSound.play();
+    }
 }
 
 function playSentSound() {
-	sendSound.currentTime = 0;
-	sendSound.play();
+    if (!isMuted) {
+        sendSound.currentTime = 0;
+        sendSound.play();
+    }
 }
 
 function playProfileSound() {
-	profileSound.currentTime = 0;
-	profileSound.play();
+    if (!isMuted) {
+        profileSound.currentTime = 0;
+        profileSound.play();
+    }
 }
 
 function playResumeSound() {
-	resumeSound.currentTime = 0;
-	resumeSound.play();
+    if (!isMuted) {
+        resumeSound.currentTime = 0;
+        resumeSound.play();
+    }
 }
 
 function playSkillSound() {
-	skillSound.currentTime = 0;
-	skillSound.play();
+    if (!isMuted) {
+        skillSound.currentTime = 0;
+        skillSound.play();
+    }
 }
 
 document.querySelectorAll(".nav-item").forEach((button) => {
@@ -17392,9 +17406,9 @@ function toggleVolume() {
 document.querySelector(".volume-input").addEventListener("change", toggleVolume);
 
 document.addEventListener("DOMContentLoaded", () => {
-  isMuted = false;
+  isMuted = true;
   sounds.forEach((sound) => {
-    sound.muted = false;
+    sound.muted = true;
   });
 });
 

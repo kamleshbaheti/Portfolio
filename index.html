@@ -30,13 +30,11 @@
   <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/line-awesome/css/line-awesome.min.css">
 </head>
-<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-NWGC0WBQZ7"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
+  function gtag() { dataLayer.push(arguments); }
   gtag('js', new Date());
-
   gtag('config', 'G-NWGC0WBQZ7');
 </script>
 <script>
@@ -128,7 +126,7 @@
     <li></li>
   </ul>
 
-    <!-- navbar start -->
+  <!-- navbar start -->
   <nav class="navbar fixed-top">
     <div class="container flex-lg-column">
       <div class="shine">
@@ -159,11 +157,10 @@
         </svg>
         <!-- End sparkles -->
 
-
         <div class="image-wrapper shines">
           <span>
             <img src="./assets/images/person.jpeg" class="d-none d-sm-block rounded-circle" alt=""
-              style="width: 175px; height: 185px" />
+              style="width: 175px; height: 185px; min-width: 155px; min-height: 165px;" />
           </span>
         </div>
         <span aria-hidden="true"></span>
@@ -198,31 +195,30 @@
   <!-- navbar end -->
 
   <!-- content-wrapper start -->
-  <div id="content-wrapper">  
-    <div class="volume" data-aos="zoom-in-down" data-aos-delay="200ms">
+  <div id="content-wrapper">
+    <div class="volume hvr-wobble-skew" data-aos="zoom-in-down" data-aos-delay="200ms">
       <input type="checkbox" class="volume-input" />
       <div class="volume-icon" data-aos="fade-right" data-aos-delay="100ms">
-        <svg class="volume-svg" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"
-          stroke-linejoin="round">
+        <svg class="volume-svg" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2"
+          fill="none" stroke-linecap="round" stroke-linejoin="round">
           <polygon class="volume-polygon" points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
-          <path class="volume-line-1"
-            d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"
-          ></path>
+          <path class="volume-line-1" d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
           <line class="volume-cross-1" x1="16" y1="10" x2="20" y2="14"></line>
           <line class="volume-cross-2" x1="20" y1="10" x2="16" y2="14"></line>
         </svg>
       </div>
     </div>
-        
+
     <!-- Home start -->
-    <section id="home" class="full-height px-lg-5">
+    <section id="home" class="full-height px-lg-4">
       <div class="container">
         <div class="row">
           <div class="col-lg-10">
-            <h1 class="display-4 fw-bolder" data-aos="fade-down"> Hey <span class="text-brand">Kamlesh here!</span></h1>
+            <div class="display-4 fw-bolder" data-aos="fade-down"> Hey <span class="text-brand">Kamlesh here!</span>
+            </div>
             <p data-aos-delay="100" data-aos="fade-left" class="lead mt-2 mb-4">A Passionate and Dedicated Software
               Engineer with a knack for creating innovative solutions through elegant code and
-              thoughtful design.<br>With a keen eye for detail, I strive for quality in every line of code I write.
+              thoughtful design. <br>With a keen eye for detail, I strive for quality in every line of code I write.
             </p>
             <div data-aos-delay="200" data-aos="fade-right">
               <a href="./assets/files/Kamlesh_Resume-2.pdf" target="_blank">
@@ -290,7 +286,7 @@
     <!-- home end -->
 
     <!-- Skills start -->
-    <section id="skills" class="full-height px-lg-5">
+    <section id="skills" class="full-height px-lg-4">
       <div class="container">
         <div class="row pb-4" data-aos="fade-up">
           <div class="col-lg-8">
@@ -340,7 +336,7 @@
                 <div class="zoom-text iconbox-wrapper">
                   <div class="iconbox rounded-5">
                     <i class="zoom-text devicon-azure-plain icon-fade"></i>
-                    <span class="text-fade">Microsoft Azure</span>
+                    <span class="text-fade">Azure</span>
                   </div>
                 </div>
 
@@ -445,7 +441,7 @@
     <!-- Skills end -->
 
     <!-- profiles -->
-    <section id="profiles" class="full-height px-lg-5">
+    <section id="profiles" class="full-height px-lg-4">
       <div class="container">
         <div class="row pb-4" data-aos="fade-up">
           <div class="col-lg-8">
@@ -543,7 +539,7 @@
 
     <!-- //WORK -->
     <!-- about start -->
-    <section id="experience" class="full-height px-lg-5">
+    <section id="experience" class="full-height px-lg-4">
       <div class="container">
         <div class="row pb-4" data-aos="fade-up">
           <div class="col-lg-10">
@@ -640,7 +636,7 @@
     <!-- about end -->
 
     <!-- WORK -->
-    <section id="project" class="full-height px-lg-5">
+    <section id="project" class="full-height px-lg-4">
       <div class="container">
         <div class="row pb-4" data-aos="fade-up">
           <div class="col-lg-8">
@@ -716,8 +712,9 @@
                   Developed a secure terminal-based <b>Login & Management System</b> which provides functionalities of
                   User Account Creation,
                   Modification, Password Reset, and Deletion.
-                  This system effectively tackled challenges such as Encrypted Password Storage and User Input
-                  Validation using Text File-Handling Techniques using the concepts of Object Object-Oriented
+                  This system effectively tackled challenges such as Encrypted-Decrypted Password Operations and User
+                  Input
+                  Validation using Text File-Handling Techniques using the concepts of Object-Oriented
                   Principles.
                   <br>
                 </p>
@@ -784,7 +781,7 @@
     </section>
 
     <!-- Education start -->
-    <section id="education" class="full-height px-lg-5">
+    <section id="education" class="full-height px-lg-4">
       <div class="container">
         <div class="row pb-4" data-aos="fade-up">
           <div class="col-lg-8">
@@ -849,7 +846,7 @@
     <!-- Education end -->
 
     <!-- contact start -->
-    <section id="footer" class="full-height px-lg-5">
+    <section id="footer" class="full-height px-lg-4">
       <div class="container">
         <div class="row justify-content-center text-center">
           <div class="col-lg-8 pb-4" data-aos="zoom-in-up" data-aos-delay="50">
@@ -867,10 +864,12 @@
               <input type="hidden" name="access_key" value="90a9a130-ca18-4e80-b797-f3b55b5e5579">
               <input type="hidden" name="redirect" value="https://kamleshbaheti.github.io/Portfolio/">
               <div>
-                <input type="text" name="name" class="form-control" placeholder="Who am I speaking with?" required autocomplete="name"/>
+                <input type="text" name="name" class="form-control" placeholder="Who am I speaking with?" required
+                  autocomplete="name" />
               </div>
               <div>
-                <input type="email" name="email" class="form-control" placeholder="Where can I reach you?" required autocomplete="email"/>
+                <input type="email" name="email" class="form-control" placeholder="Where can I reach you?" required
+                  autocomplete="email" />
               </div>
               <div class="col-12">
                 <textarea name="message" placeholder="What would you like to share with me?" rows="4"
@@ -931,7 +930,7 @@ c-0.9,0.1-10.3,4.9-22.6-12.3C5.9,17.7,11.8,26.9,20.8,31.6z" />
     <!-- contact end -->
 
     <!-- footer start -->
-    <footer class="py-5 px-lg-5">
+    <footer class="py-5 px-lg-4">
       <div class="container" id="contact">
         <div class="row gy-4 justify-content-between" style="position: relative;">
           <div class="col-auto name_auther" style="margin-top: 10px;">
@@ -950,8 +949,7 @@ c-0.9,0.1-10.3,4.9-22.6-12.3C5.9,17.7,11.8,26.9,20.8,31.6z" />
             <ul class="social_icons">
               <li class="icon-content"><br>
                 <a href="https://mail.google.com/mail/?view=cm&fs=1&to=kamleshbaheti2232@gmail.com&su=Let's%20Connect%20-%20Discussing%20Opportunities%20and%20Ideas&body=Hi%20Kamlesh,%0A%0AI%20hope%20you're%20doing%20well!%20I%20came%20across%20your%20portfolio%2C%20and%20I%20must%20say%2C%20I'm%20impressed%20with%20the%20projects%20and%20skills%20you've%20showcased.%20I%20would%20love%20to%20discuss%20potential%20opportunities%20and%20ideas%20where%20we%20could%20collaborate%20or%20connect%20further.%0A%0ALooking%20forward%20to%20hearing%20from%20you%20soon!%0A%0ABest%20regards%2C%0A[Your%20Name]%0A[Your%20Position/Company]"
-                  aria-label="gmail" data-social="gmail">
-
+                  aria-label="gmail" data-social="gmail" class="hvr-wobble-skew">
                   <div class="filled"></div>
                   <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48" height="48" viewBox="0 0 48 48">
                     <path class="path-1" d="M45,16.2l-5,2.75l-5,4.75L35,40h7c1.657,0,3-1.343,3-3V16.2z"></path>
@@ -966,24 +964,24 @@ c-0.9,0.1-10.3,4.9-22.6-12.3C5.9,17.7,11.8,26.9,20.8,31.6z" />
                     </path>
                   </svg>
                 </a>
-                <div class="tooltip">@kamleshbaheti2232@gmail.com</div>
+                <div class="tooltip">kamleshbaheti2232@gmail.com</div>
               </li>
 
               <li class="icon-content"><br>
-                <a href="https://www.linkedin.com/in/kamleshbaheti036/" aria-label="LinkedIn" data-social="linkedin">
+                <a href="https://www.linkedin.com/in/kamleshbaheti036/" aria-label="LinkedIn" data-social="linkedin" class="hvr-wobble-skew">
                   <div class="filled"></div>
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                    class="bi bi-linkedin" viewBox="0 0 16 16" xml:space="preserve">
+                    class="bi bi-linkedin hvr-wobble-skew" viewBox="0 0 16 16" xml:space="preserve">
                     <path
                       d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"
                       fill="currentColor"></path>
                   </svg>
                 </a>
-                <div class="tooltip">@kamleshbaheti036</div>
+                <div class="tooltip">kamleshbaheti036</div>
               </li>
 
               <li class="icon-content"><br>
-                <a href="https://www.instagram.com/_kratak_" aria-label="Instagram" data-social="instagram">
+                <a href="https://www.instagram.com/_kratak_" aria-label="Instagram" data-social="instagram" class="hvr-wobble-skew">
                   <div class="filled"></div>
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     class="bi bi-instagram" viewBox="0 0 16 16" xml:space="preserve">
@@ -992,11 +990,11 @@ c-0.9,0.1-10.3,4.9-22.6-12.3C5.9,17.7,11.8,26.9,20.8,31.6z" />
                       fill="currentColor"></path>
                   </svg>
                 </a>
-                <div class="tooltip">@_kratak_</div>
+                <div class="tooltip">_kratak_</div>
               </li>
 
               <li class="icon-content"><br>
-                <a href="https://t.me/tmpusre" aria-label="Telegram" data-social="telegram">
+                <a href="https://t.me/tmpusre" aria-label="Telegram" data-social="telegram" class="hvr-wobble-skew">
                   <div class="filled"></div>
                   <svg viewBox="0 0 100 100" width="16" height="16" fill="currentColor" class="bi bi-telegram"
                     xml:space="preserve">
@@ -1005,7 +1003,7 @@ c-0.9,0.1-10.3,4.9-22.6-12.3C5.9,17.7,11.8,26.9,20.8,31.6z" />
                       fill="currentColor"></path>
                   </svg>
                 </a>
-                <div class="tooltip">@tmpusre</div>
+                <div class="tooltip">tmpusre</div>
               </li>
             </ul>
           </div>
@@ -1013,7 +1011,7 @@ c-0.9,0.1-10.3,4.9-22.6-12.3C5.9,17.7,11.8,26.9,20.8,31.6z" />
       </div>
       <div>
         <hr class="ftr">
-        <p class="last-update">Last Update: 22-Dec-2024</p>
+        <p class="last-update">Last Update: 27-Dec-2024</p>
         <p class="copy" id="hoverText2"></p>
       </div>
     </footer>

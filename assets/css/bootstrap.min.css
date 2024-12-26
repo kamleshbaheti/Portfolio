@@ -253,20 +253,14 @@ textarea {
 }
 
 .lead {
-    font-size: 2.25rem;
+    font-size: calc(1.3rem + 1.2vw);
     font-weight: 300
 }
 
 .display-4 {
-    font-size: calc(1.475rem + 2.7vw);
+    font-size: calc(1.3rem + 2.7vw);
     font-weight: 300;
     line-height: 1.2
-}
-
-@media (min-width:1200px) {
-    .display-4 {
-        font-size: 3.5rem
-    }
 }
 
 .container,
@@ -3993,8 +3987,8 @@ textarea.form-control-lg {
     }
 
     .px-lg-4 {
-        padding-right: 1.5rem !important;
-        padding-left: 1.5rem !important
+        padding-right: 2.5rem !important;
+        padding-left: 2.5rem !important
     }
 
     .px-lg-5 {
@@ -4172,19 +4166,19 @@ textarea.form-control-lg {
 
     .last-update {
         position: relative;
-        color:  rgba(255, 255, 255, 0.549);
+        color: rgba(255, 255, 255, 0.549);
         float: left;
-        padding-left: 6px;
+        padding-left: 1rem;
         font-size: 15px;
         margin-bottom: 0rem;
         font-family: monospace;
     }
-    
+
     .copy {
         position: relative;
         color: rgba(255, 255, 255, 0.549);
         float: right;
-        padding-right: 6px;
+        padding-right: 1rem;
         font-size: 15px;
         margin-bottom: 0rem;
         font-family: monospace;
@@ -4200,9 +4194,11 @@ textarea.form-control-lg {
     .ftr {
         display: none;
     }
+
     .copy {
         display: none;
     }
+
     .last-update {
         display: none;
     }

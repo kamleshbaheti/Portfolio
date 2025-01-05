@@ -17416,6 +17416,26 @@ document.addEventListener("contextmenu", function (e) {
 	e.preventDefault();
 });
 
+const words = ["Hola!", "Hello!", "Ciao!", "Bonjour!"];
+let currentWordIndex = 0;
+const wordContainer = document.getElementById("word-container");
+
+function animateWord() {
+    wordContainer.innerHTML = "";
+    const currentWord = words[currentWordIndex].split("");
+    currentWord.forEach((char, index) => {
+        const span = document.createElement("span");
+        span.className = "char";
+        span.style.animationDelay = `calc(var(--text-in-delay) * ${index})`;
+        span.textContent = char;
+        wordContainer.appendChild(span);
+    });
+    currentWordIndex = (currentWordIndex + 1) % words.length;
+    setTimeout(animateWord, parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--duration")) * 2000);
+}
+
+animateWord();
+
 document.addEventListener("keydown", function (event) {
 	if (event.ctrlKey && event.shiftKey && event.key.toLowerCase() === "i") {
 		event.preventDefault();

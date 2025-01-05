@@ -4167,8 +4167,8 @@ textarea.form-control-lg {
     .last-update {
         position: relative;
         color: rgba(255, 255, 255, 0.549);
-        float: left;
-        padding-left: 1rem;
+        float: right;
+        padding-right: 1rem;
         font-size: 15px;
         margin-bottom: 0rem;
         font-family: monospace;
@@ -4177,8 +4177,8 @@ textarea.form-control-lg {
     .copy {
         position: relative;
         color: rgba(255, 255, 255, 0.549);
-        float: right;
-        padding-right: 1rem;
+        float: left;
+        padding-left: 1rem;
         font-size: 15px;
         margin-bottom: 0rem;
         font-family: monospace;

@@ -434,8 +434,11 @@ ul {
     background-color: #24292e;
 }
 
-.social_icons .icon-content a[data-social="gmail"] .filled,
 .social_icons .icon-content a[data-social="gmail"]~.tooltip {
+    background-color: #000;
+}
+
+.social_icons .icon-content a[data-social="gmail"] .filled {
     background-color: #ffffff00;
 }
 
@@ -889,6 +892,7 @@ ul {
     filter: drop-shadow(0 0 0 #fffdef);
     z-index: -5;
     transition: all 1s cubic-bezier(0.05, 0.83, 0.43, 0.96);
+    opacity: 0;
 }
 
 .star-2 {
@@ -900,6 +904,7 @@ ul {
     filter: drop-shadow(0 0 0 #fffdef);
     z-index: -5;
     transition: all 1s cubic-bezier(0, 0.4, 0, 1.01);
+    opacity: 0;
 }
 
 .star-3 {
@@ -911,6 +916,7 @@ ul {
     filter: drop-shadow(0 0 0 #fffdef);
     z-index: -5;
     transition: all 1s cubic-bezier(0, 0.4, 0, 1.01);
+    opacity: 0;
 }
 
 .star-4 {
@@ -922,6 +928,7 @@ ul {
     filter: drop-shadow(0 0 0 #fffdef);
     z-index: -5;
     transition: all .8s cubic-bezier(0, 0.4, 0, 1.01);
+    opacity: 0;
 }
 
 .star-5 {
@@ -933,6 +940,7 @@ ul {
     filter: drop-shadow(0 0 0 #fffdef);
     z-index: -5;
     transition: all .6s cubic-bezier(0, 0.4, 0, 1.01);
+    opacity: 0;
 }
 
 .star-6 {
@@ -944,6 +952,7 @@ ul {
     filter: drop-shadow(0 0 0 #fffdef);
     z-index: -5;
     transition: all .8s ease;
+    opacity: 0;
 }
 
 .resume_button:hover {
@@ -954,6 +963,7 @@ ul {
 }
 
 .resume_button:hover .star-1 {
+    opacity: 1;
     position: absolute;
     top: -80%;
     left: -25%;
@@ -964,6 +974,7 @@ ul {
 }
 
 .resume_button:hover .star-2 {
+    opacity: 1;
     position: absolute;
     top: -25%;
     left: 10%;
@@ -974,6 +985,7 @@ ul {
 }
 
 .resume_button:hover .star-3 {
+    opacity: 1;
     filter: drop-shadow(0 0 5px var(--star));
     position: absolute;
     top: 75%;
@@ -984,6 +996,7 @@ ul {
 }
 
 .resume_button:hover .stars {
+    opacity: 1;
     position: absolute;
     top: 75%;
     left: 25%;
@@ -993,6 +1006,7 @@ ul {
 }
 
 .resume_button:hover .star-4 {
+    opacity: 1;
     position: absolute;
     top: -10%;
     left: 80%;
@@ -1003,6 +1017,7 @@ ul {
 }
 
 .resume_button:hover .star-5 {
+    opacity: 1;
     position: absolute;
     top: 25%;
     left: 115%;
@@ -1013,6 +1028,7 @@ ul {
 }
 
 .resume_button:hover .star-6 {
+    opacity: 1;
     position: absolute;
     top: 5%;
     left: 60%;
@@ -2120,7 +2136,6 @@ button {
     font-weight: 600;
 }
 
-
 .button--stroke:after,
 .button__border-gradient {
     bottom: 0;
@@ -2135,12 +2150,6 @@ button {
     border-radius: 2rem;
     content: "";
     pointer-events: none
-}
-
-.button--small {
-    font-size: .8125rem;
-    gap: .5rem;
-    padding: .8125rem 1.5rem
 }
 
 .button__flair {
@@ -2212,26 +2221,6 @@ button {
 
 .button--stroke:active {
     animation: butt_zoom 0.5s ease-in;
-}
-
-.button__icon {
-    background-color: currentColor;
-    background-position: 50%;
-    background-repeat: no-repeat;
-    background-size: contain;
-    display: inline-block;
-    height: 1.5rem;
-    transition: color 50ms var(--ease-in-out-quart);
-    width: 1.5rem
-}
-
-.button--stroke:hover .button__icon {
-    transition: color .15s var(--ease-in-out-quart)
-}
-
-.button--small .button__icon {
-    height: 1rem;
-    width: 1rem
 }
 
 #overlay {

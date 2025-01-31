@@ -484,7 +484,7 @@ ul {
 }
 
 .zoom-text:hover {
-    transform: scale(1.18);
+    transform: scale(1.10);
 }
 
 .profiles {
@@ -2318,7 +2318,8 @@ button {
     width: 60px;
     height: 60px;
     border-radius: 70% 65% / 50% 75%;
-    background-color: #40a3d8bc;
+    /* background-color: #40a3d8bc; */
+    background-color: color-mix(in srgb, var(--blue-darkmode) 99%, rgba(64, 163, 216, 74%));
     overflow: hidden;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
     z-index: 1000;
@@ -2525,4 +2526,47 @@ button {
     background-color: none;
     overflow: auto;
     font-size: inherit;
+}
+
+.masonry {
+    column-count: 4;
+    column-gap: 1.6rem;
+    position: relative;
+}
+
+.masonry-item {
+    color: white;
+    padding: 16px;
+    margin-bottom: 12px;
+    display: inline-block;
+    width: 100%;
+    break-inside: avoid;
+    font-weight: 600;
+}
+
+.tag {
+    display: inline-block;
+    background: var(--blue-darkmode);
+    color: #000;
+    padding: 10px 13px;
+    margin: 6px;
+    border-radius: 1.3rem;
+    font-size: calc(0.9rem + 1.2vmin);
+    transition: transform 0.2s ease;
+}
+
+.tag:hover {
+    transform: scale(1.2) !important;
+}
+
+@media (max-width: 1100px) {
+    .masonry {
+        column-count: 2;
+    }
+}
+
+@media (max-width: 480px) {
+    .masonry {
+        column-count: 1;
+    }
 }

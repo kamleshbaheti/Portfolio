@@ -2318,7 +2318,6 @@ button {
     width: 60px;
     height: 60px;
     border-radius: 70% 65% / 50% 75%;
-    /* background-color: #40a3d8bc; */
     background-color: color-mix(in srgb, var(--blue-darkmode) 99%, rgba(64, 163, 216, 74%));
     overflow: hidden;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
@@ -2349,12 +2348,28 @@ button {
     display: flex;
     width: 0;
     height: 100%;
-    border-radius: 70% 65% / 50% 75%;
+    border-radius: 60% 40% 40% 60% / 60% 40% 60% 40%;
     transition: all 0.2s ease-in-out;
     position: absolute;
     left: 0;
     top: 0;
-    background-color: var(--black);
+    /* background-color: var(--black); */
+}
+
+#blob { 
+    animation: infinite 2s shapeshift;
+}
+
+@keyframes shapeshift {
+    0% {
+        border-radius: 70% 65% / 50% 75%;
+    }
+    50% {
+        border-radius: 40% 60% 60% 40% / 60% 40% 60% 40%;
+    }
+    100% {
+        border-radius: 70% 65% / 50% 75%;
+    }
 }
 
 .volume-input:checked+.volume-icon:before {
@@ -2372,7 +2387,7 @@ button {
 .volume-svg .volume-line-1 {
     opacity: 0;
     visibility: hidden;
-    transform: scale(0);
+    transform: scale(2);
     transition: all 0.2s ease-in-out;
 }
 

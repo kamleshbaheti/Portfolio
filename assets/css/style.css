@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'Cool jazz';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Cool jazz'), url('../fonts/Cooljazz.woff') format('woff');
+}
+
 :root {
     --body: #ffffff;
     --heading: #ffffff;
@@ -5,7 +12,6 @@
     --base-2: #000000;
     --blue-darkmode: #40A2D8;
     --sidbar-width: 16%;
-    --font-base: "Caveat";
     --white: #ffffff;
     --black: #000000;
     --navover: #0000008f;
@@ -64,7 +70,7 @@ html {
 body {
     background-color: var(--base-2);
     color: var(--body);
-    font-family: var(--font-base);
+    font-family:'Cool jazz';
 }
 
 h1,
@@ -74,7 +80,6 @@ h4,
 h5,
 h6 {
     color: var(--heading);
-    font-weight: 700;
 }
 
 a {
@@ -141,40 +146,6 @@ img {
     bottom: -50px;
 }
 
-.iconbox {
-    width: 100%;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--blue-darkmode);
-    color: black;
-}
-
-.iconbox-wrapper {
-    flex: 0 0 16.6667%;
-    max-width: 16.6667%;
-    padding: 10px;
-}
-
-.iconbox i {
-    font-size: 8vmin;
-}
-
-@media (max-width: 1250px) {
-    .iconbox-wrapper {
-        flex: 0 0 25%;
-        max-width: 25%;
-    }
-}
-
-@media (max-width: 768px) {
-    .iconbox-wrapper {
-        flex: 0 0 33.3333%;
-        max-width: 33.3333%;
-    }
-}
-
 @media (max-height: 650px) {
     .navbar {
         display: none;
@@ -207,8 +178,8 @@ img {
     }
 
     .navbar .nav-link {
-        font-size: calc(0.6rem + 1.2vw);
-        font-weight: 700;
+        font-size: calc(0.5rem + 1.2vw);
+        font-weight: 500;
         color: var(--body);
         transition: transform 0.1s ease-in-out;
     }
@@ -363,8 +334,7 @@ ul {
     border-color: var(--body);
     opacity: 0;
     visibility: hidden;
-    font-family: var(--font-base), cursive;
-    font-size: 16px;
+    font-size: calc(0.4rem + 1.2vmin);
     transition: all 0.3s ease;
 }
 
@@ -488,34 +458,25 @@ ul {
 }
 
 .profiles {
-    font-size: calc(1.2rem + 1.2vmax);
+    font-size: calc(0.8rem + 1.2vmax);
     font-weight: 400;
     margin-bottom: 0.5rem;
 }
 
 .content_text { 
-    font-size: calc(0.8rem + 1.2vmin);
+    font-size: calc(0.6rem + 1.2vmin);
+}
+
+.exp_head {
+    font-size: calc(0.9rem + 1.2vmin);
 }
 
 .icon-fade {
     transition: opacity 0.1s ease;
 }
 
-.text-fade {
-    position: absolute;
-    opacity: 0;
-    color: black;
-    transition: opacity 0.3s ease;
-    font-size: calc(0.8rem + 1.2vw);
-}
-
 .zoom-text:hover .icon-fade {
     opacity: 0;
-}
-
-.zoom-text:hover .text-fade {
-    opacity: 1;
-    font-weight: 600;
 }
 
 @keyframes animate {
@@ -874,7 +835,7 @@ ul {
     position: relative;
     padding: 0px;
     background: var(--color);
-    font-size: 24px;
+    font-size: calc(0.8rem + 1.5vmin);
     font-weight: 500;
     color: var(--black);
     border: 3px solid var(--color);
@@ -1081,19 +1042,24 @@ button {
 }
 
 .wrapper-no4 .button-bird__text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    font-size: 30px;
+    text-align: center;
+    font-size: calc(0.8rem + 1.2vmax);
     color: var(--black);
     position: absolute;
     z-index: 1000;
-    top: 25%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     margin: 0;
     transition: transform 0.2s ease;
     width: 90%;
 }
 
 .wrapper-no4 .button-bird__text:hover {
-    transform: scale(1.2);
     font-weight: 600;
 }
 
@@ -2117,8 +2083,8 @@ button {
     border-radius: 6.25rem;
     color: var(--button-color, var(--button-stroke));
     display: inline-flex;
-    font-size: 1.2rem;
-    font-weight: 600;
+    font-size: calc(0.5rem + 1.2vmin);
+    font-weight: 100;
     gap: .363636em;
     justify-content: center;
     letter-spacing: -.01em;
@@ -2133,7 +2099,7 @@ button {
 .button.button--stroke:hover {
     color: black;
     transform: scale(1.15);
-    font-weight: 600;
+    font-weight: 400;
 }
 
 .button--stroke:after,
@@ -2247,6 +2213,7 @@ button {
 }
 
 #progstat {
+    top: 60%;
     font-size: 2rem;
     letter-spacing: 5px;
     color: var(--white);
@@ -2353,7 +2320,6 @@ button {
     position: absolute;
     left: 0;
     top: 0;
-    /* background-color: var(--black); */
 }
 
 #blob { 
@@ -2372,7 +2338,7 @@ button {
     }
 }
 
-.volume-input:checked+.volume-icon:before {
+.volume-input:checked + .volume-icon:before {
     width: 100%;
 }
 
@@ -2385,31 +2351,35 @@ button {
 }
 
 .volume-svg .volume-line-1 {
-    opacity: 0;
-    visibility: hidden;
-    transform: scale(2);
-    transition: all 0.2s ease-in-out;
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+    transition: all 0.3s ease-in-out;
+    stroke-linecap: round;
+    stroke-width: 2;
 }
 
 .volume-svg .volume-cross-1,
 .volume-svg .volume-cross-2 {
-    opacity: 1;
-    visibility: visible;
-    transform: scale(1);
-    transition: all 0.2s ease-in-out;
-}
-
-.volume-input:checked+.volume-icon .volume-line-1 {
-    opacity: 1;
-    visibility: visible;
-    transform: scale(1);
-}
-
-.volume-input:checked+.volume-icon .volume-cross-1,
-.volume-input:checked+.volume-icon .volume-cross-2 {
     opacity: 0;
     visibility: hidden;
     transform: scale(0);
+    transition: all 0.3s ease-in-out;
+}
+
+.volume-input:checked + .volume-icon .volume-line-1 {
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(2);
+}
+
+.volume-input:checked + .volume-icon .volume-cross-1,
+.volume-input:checked + .volume-icon .volume-cross-2 {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+    stroke-linecap: round;
+    stroke-width: 2;
 }
 
 @-webkit-keyframes hvr-wobble-skew {
@@ -2540,7 +2510,6 @@ button {
     transform: rotateX(180deg);
     background-color: none;
     overflow: auto;
-    font-size: inherit;
 }
 
 .masonry {
@@ -2566,7 +2535,8 @@ button {
     padding: 10px 13px;
     margin: 6px;
     border-radius: 1.3rem;
-    font-size: calc(0.9rem + 1.2vmin);
+    font-size: calc(0.8rem + 1.2vmin);
+    font-weight: 100;
     transition: transform 0.2s ease;
 }
 

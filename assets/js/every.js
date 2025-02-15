@@ -104,17 +104,7 @@ function toggleVolume() {
 	});
 }
 
-document
-	.querySelector(".volume-input")
-	.addEventListener("change", toggleVolume);
-
-document.addEventListener("DOMContentLoaded", () => {
-	isMuted = true;
-	sounds.forEach((sound) => {
-		sound.muted = true;
-	});
-});
-
+document.querySelector(".volume-input").addEventListener("change", toggleVolume);
 document.addEventListener("contextmenu", function (e) {
 	e.preventDefault();
 });

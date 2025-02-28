@@ -251,7 +251,7 @@ textarea {
 }
 
 .lead {
-    font-size: calc(0.7rem + 1.2vmax);
+    font-size: calc(0.6rem + 1.2vmax);
     font-weight: 300
 }
 

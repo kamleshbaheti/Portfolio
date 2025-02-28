@@ -186,8 +186,8 @@ img {
 
     .navbar .nav-link:hover {
         color: var(--blue-darkmode);
-        transform: scale(1.26);
-        font-weight: 1000;
+        transform: scale(1.2);
+        font-weight: 500;
     }
 
     .navbar-brand img {

@@ -14,7 +14,7 @@
     --sidbar-width: 16%;
     --white: #ffffff;
     --black: #000000;
-    --navover: #0000008f;
+    --navover: #0000005d;
     --placeholder: #f8f8f857;
     --star: #f5dd27;
     --duration: 1.2s;
@@ -70,7 +70,7 @@ html {
 body {
     background-color: var(--base-2);
     color: var(--body);
-    font-family:'Cool jazz';
+    font-family: 'Cool jazz';
 }
 
 h1,
@@ -100,7 +100,7 @@ img {
     color: var(--blue-darkmode);
 }
 
-#word-container{
+#word-container {
     display: block;
 }
 
@@ -116,9 +116,11 @@ img {
         opacity: 0;
         transform: translateX(100%);
     }
+
     50% {
         transform: translateX(-20%);
     }
+
     100% {
         opacity: 1;
         transform: translateX(0);
@@ -169,7 +171,7 @@ img {
         min-height: 100vh;
         width: var(--sidbar-width);
         min-width: 180px;
-        background: linear-gradient(var(--navover), var(--navover)), url("../images/wall.jpg");
+        background: linear-gradient(to left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%); 
         background-size: cover;
         background-position: center;
         border-top-right-radius: 2rem;
@@ -186,32 +188,58 @@ img {
 
     .navbar .nav-link:hover {
         color: var(--blue-darkmode);
-        transform: scale(1.2);
-        font-weight: 500;
+        /* transform: scale(1.2); */
+        font-weight: 600;
     }
 
     .navbar-brand img {
         border: 8px solid var(--blue-darkmode);
     }
 
+    .image-wrapper img {
+        width: 175px;
+        height: 175px;
+        object-fit: cover;
+        aspect-ratio: 1 / 1;
+        border-radius: 50%;
+        overflow: hidden;
+        image-rendering: auto;
+        overflow-clip-margin: unset;
+    }
+
+    .navbar-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        z-index: -1;
+        border-top-right-radius: 2rem;
+        border-bottom-right-radius: 2rem;
+    }
+    
     #content-wrapper {
         padding-left: var(--sidbar-width);
     }
-
-    #hoverText::after {
-        content: "Kratak";
-        position: absolute;
-        left: 0;
-        opacity: 0;
-        transition: opacity 0s ease;
-    }
-
+    
     #hoverText:hover::before {
         opacity: 0;
     }
 
+    #hoverText::after {
+        content: "Kamlesh Baheti";
+        position: absolute;
+        left: 0;
+        opacity: 0;
+        transform: translateY(10px);
+        transition: opacity 0.6s ease, transform 0.4s ease;
+    }
+    
     #hoverText:hover::after {
         opacity: 1;
+        transform: translateY(0);
     }
 
     @keyframes highlights {
@@ -255,7 +283,7 @@ img {
 .card-custom-content {
     flex-grow: 1;
 }
-  
+
 .card_sec {
     padding-bottom: 0rem !important;
     padding-left: 1.5rem !important;
@@ -309,7 +337,7 @@ ul {
 .social_icons {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: end;
     padding: 0px;
     margin: 0px;
 }
@@ -347,7 +375,7 @@ ul {
 .social_icons .icon-content:hover .tooltip {
     opacity: 1;
     visibility: visible;
-    top: -20px;
+    top: -50px;
 }
 
 .social_icons .icon-content a {
@@ -449,7 +477,7 @@ ul {
 }
 
 .zoom-text {
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease !important;
     display: inline-block;
 }
 
@@ -458,13 +486,18 @@ ul {
 }
 
 .profiles {
-    font-size: calc(0.8rem + 1.2vmax);
+    font-size: calc(0.6rem + 1.2vmax);
     font-weight: 400;
     margin-bottom: 0.5rem;
 }
 
-.content_text { 
+.content_text {
     font-size: calc(0.6rem + 1.2vmin);
+}
+
+.content_text:hover a {
+    text-decoration: underline;
+    color: var(--blue-darkmode);
 }
 
 .exp_head {
@@ -676,6 +709,7 @@ ul {
 .shines {
     position: relative;
     overflow: hidden;
+    height: inherit;
 }
 
 .shines::before {
@@ -684,6 +718,9 @@ ul {
     display: block;
     width: 50%;
     height: 100%;
+    object-fit: fill;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
     left: -75%;
     position: absolute;
     top: 0;
@@ -835,7 +872,7 @@ ul {
     position: relative;
     padding: 0px;
     background: var(--color);
-    font-size: calc(0.8rem + 1.5vmin);
+    font-size: calc(0.6rem + 1.5vmin);
     font-weight: 500;
     color: var(--black);
     border: 3px solid var(--color);
@@ -920,14 +957,14 @@ ul {
     background: transparent;
     color: var(--color);
     box-shadow: 0 0 5px var(--star);
-    transform: scale(1.05);
+    transform: scale(1.1);
 }
 
 .resume_button:hover .star-1 {
     opacity: 1;
     position: absolute;
     top: -80%;
-    left: -25%;
+    left: -20%;
     width: 25px;
     height: auto;
     filter: drop-shadow(0 0 5px var(--star));
@@ -937,7 +974,7 @@ ul {
 .resume_button:hover .star-2 {
     opacity: 1;
     position: absolute;
-    top: -25%;
+    top: -20%;
     left: 10%;
     width: 15px;
     height: auto;
@@ -949,9 +986,9 @@ ul {
     opacity: 1;
     filter: drop-shadow(0 0 5px var(--star));
     position: absolute;
-    top: 75%;
+    top: 85%;
     left: 25%;
-    width: 5px;
+    width: 10px;
     height: auto;
     z-index: 2;
 }
@@ -1014,7 +1051,7 @@ button {
     min-width: 150px;
     font-size: 16px;
     position: relative;
-    z-index: 1050;
+    z-index: 1;
 }
 
 .wrapper-no4 {
@@ -1046,21 +1083,15 @@ button {
     justify-content: center;
     align-items: center;
     text-align: center;
-    text-align: center;
     font-size: calc(0.8rem + 1.2vmax);
     color: var(--black);
-    position: absolute;
-    z-index: 1000;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    margin: 0;
-    transition: transform 0.2s ease;
-    width: 90%;
+    position: relative;
+    z-index: 1;
+    margin: auto;
 }
 
-.wrapper-no4 .button-bird__text:hover {
-    font-weight: 600;
+.wrapper-no4 .button-bird:hover .button-bird__text {
+    animation: heartBeat 1s ease;
 }
 
 .wrapper-no4 .button-bird:focus {
@@ -2225,7 +2256,7 @@ button {
 }
 
 #hoverText::before {
-    content: "Kamlesh Baheti";
+    content: "Kratak Maheshwari";
 }
 
 #hoverText2::before {
@@ -2282,8 +2313,8 @@ button {
     top: 0px;
     right: 10px;
     margin: 12px;
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     border-radius: 70% 65% / 50% 75%;
     background-color: color-mix(in srgb, var(--blue-darkmode) 99%, rgba(64, 163, 216, 74%));
     overflow: hidden;
@@ -2322,7 +2353,7 @@ button {
     top: 0;
 }
 
-#blob { 
+#blob {
     animation: infinite 2s shapeshift;
 }
 
@@ -2330,15 +2361,17 @@ button {
     0% {
         border-radius: 70% 65% / 50% 75%;
     }
+
     50% {
         border-radius: 40% 60% 60% 40% / 60% 40% 60% 40%;
     }
+
     100% {
         border-radius: 70% 65% / 50% 75%;
     }
 }
 
-.volume-input:checked + .volume-icon:before {
+.volume-input:checked+.volume-icon:before {
     width: 100%;
 }
 
@@ -2346,8 +2379,8 @@ button {
     z-index: 2;
     border: 0px;
     color: var(--white);
-    height: 30px;
-    width: 30px;
+    height: 25px;
+    width: 25px;
 }
 
 .volume-svg .volume-line-1 {
@@ -2367,14 +2400,14 @@ button {
     transition: all 0.3s ease-in-out;
 }
 
-.volume-input:checked + .volume-icon .volume-line-1 {
+.volume-input:checked+.volume-icon .volume-line-1 {
     opacity: 0;
     visibility: hidden;
     transform: scale(2);
 }
 
-.volume-input:checked + .volume-icon .volume-cross-1,
-.volume-input:checked + .volume-icon .volume-cross-2 {
+.volume-input:checked+.volume-icon .volume-cross-1,
+.volume-input:checked+.volume-icon .volume-cross-2 {
     opacity: 1;
     visibility: visible;
     transform: scale(1);
@@ -2446,27 +2479,6 @@ button {
     }
 }
 
-.hvr-wobble-skew {
-    display: inline-block;
-    vertical-align: middle;
-    -webkit-transform: perspective(1px) translateZ(0);
-    transform: perspective(1px) translateZ(0);
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-}
-
-.hvr-wobble-skew:hover,
-.hvr-wobble-skew:focus,
-.hvr-wobble-skew:active {
-    -webkit-animation-name: hvr-wobble-skew;
-    animation-name: hvr-wobble-skew;
-    -webkit-animation-duration: 1s;
-    animation-duration: 1s;
-    -webkit-animation-timing-function: ease-in-out;
-    animation-timing-function: ease-in-out;
-    -webkit-animation-iteration-count: 1;
-    animation-iteration-count: 1;
-}
-
 .flip-card {
     background-color: transparent;
     width: 100%;
@@ -2486,7 +2498,7 @@ button {
     transform: rotateX(180deg);
 }
 
-.flip-card-front, 
+.flip-card-front,
 .flip-card-back {
     position: absolute;
     top: 0;
@@ -2535,13 +2547,18 @@ button {
     padding: 10px 13px;
     margin: 6px;
     border-radius: 1.3rem;
-    font-size: calc(0.8rem + 1.2vmin);
+    font-size: calc(0.6rem + 1.2vmin);
     font-weight: 100;
     transition: transform 0.2s ease;
 }
 
 .tag:hover {
-    transform: scale(1.2) !important;
+    animation: tada 1s ease;
+}
+
+.tech-tpc {
+    margin-bottom: 0rem;
+    font-size: calc(0.8rem + 1.2vmin);
 }
 
 @media (max-width: 1100px) {
@@ -2554,4 +2571,34 @@ button {
     .masonry {
         column-count: 1;
     }
+}
+
+mark {
+    color: #fff;
+    margin: 0 -0.4em;
+    padding: 0.1em 0.4em;
+    border-radius: 0.5em 0.7em;
+    background: transparent;
+    background-image: linear-gradient(to right,
+            rgba(64, 162, 216, 0.1),
+            rgba(64, 162, 216, 0.377) 4%,
+            rgba(64, 163, 216, 0.237));
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    
+    background-size: 0% 100%; /* Initially hidden */
+    background-repeat: no-repeat;
+    transition: background-size 1s ease-in-out; /* Smooth reveal effect */
+}
+
+mark.reveal {
+    background-size: 100% 100%; /* Expands to full width */
+}
+
+.leetcode:hover .high {
+    color: var(--blue-darkmode);
+}
+
+.codechef:hover .high {
+    color: var(--blue-darkmode);
 }

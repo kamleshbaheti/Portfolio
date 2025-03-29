@@ -73,6 +73,10 @@ document.querySelectorAll(".social_icons").forEach((button) => {
 	button.addEventListener("click", playlinkSound);
 });
 
+document.querySelectorAll(".content_text a").forEach((button) => {
+	button.addEventListener("click", playlinkSound);
+});
+
 document.querySelectorAll(".button--stroke").forEach((button) => {
 	button.addEventListener("click", playProfileSound);
 });
@@ -104,12 +108,14 @@ function toggleVolume() {
 	});
 }
 
-document.querySelector(".volume-input").addEventListener("change", toggleVolume);
+document
+	.querySelector(".volume-input")
+	.addEventListener("change", toggleVolume);
 document.addEventListener("contextmenu", function (e) {
 	e.preventDefault();
 });
 
-const words = ["Hola!", "Hello!", "Ciao!", "Bonjour!"];
+const words = ["Hola!", "Hello!", "Ciao!", "Olà!", "Bonjour!"];
 let currentWordIndex = 0;
 const wordContainer = document.getElementById("word-container");
 
@@ -459,4 +465,95 @@ const buttonElements = document.querySelectorAll('[data-block="button"]');
 
 buttonElements.forEach((buttonElement) => {
 	new Button(buttonElement);
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+	let marks = document.querySelectorAll("mark");
+	function revealHighlight() {
+		marks.forEach((mark) => {
+			let rect = mark.getBoundingClientRect();
+			if (rect.top < window.innerHeight * 0.8) {
+				mark.classList.add("reveal");
+			}
+		});
+	}
+	window.addEventListener("scroll", revealHighlight);
+	revealHighlight();
+});
+
+const profileImg = document.getElementById("profile-img");
+const navbarBg = document.querySelector(".navbar-bg");
+
+const profileImages = [
+    "./assets/images/p1.jpeg",
+    "./assets/images/p2.jpg",
+    "./assets/images/p3.jpg",
+    "./assets/images/p4.jpg",
+    "./assets/images/p5.jpg",
+    "./assets/images/p6.jpg"
+].map(img => {
+    new Image().src = img;
+    return img;
+});
+
+const backgroundImages = [
+    "./assets/images/wall1.jpg",
+    "./assets/images/wall2.jpg",
+    "./assets/images/wall3.jpg",
+    "./assets/images/wall4.jpg",
+    "./assets/images/wall5.jpg",
+    "./assets/images/wall6.jpg"
+].map(img => {
+    new Image().src = img;
+    return img;
+});
+
+let index = 0;
+let isTransitioning = false;
+
+function changeImages() {
+    if (isTransitioning) return;
+    isTransitioning = true;
+
+    // **Step 1: Apply "Out" animation for Profile and Navbar**
+    profileImg.classList.add("animate__animated", "animate__flipOutX");
+    navbarBg.classList.add("animate__animated", "animate__fadeOut");
+
+    // **Step 2: Change Images Immediately After "Out" Animation Starts**
+    setTimeout(() => {
+        profileImg.src = profileImages[index];
+        navbarBg.style.backgroundImage = `linear-gradient(var(--navover), var(--navover)), url('${backgroundImages[index]}')`;
+
+        // **Step 3: Remove "Out" animation and Apply "In" Animation**
+        profileImg.classList.replace("animate__flipOutX", "animate__flipInX");
+        navbarBg.classList.replace("animate__fadeOut", "animate__fadeIn");
+    }, 400); // Adjust timing to match animation speed
+
+    // **Step 4: After "In" animation completes, reset animations**
+    setTimeout(() => {
+        profileImg.classList.remove("animate__animated", "animate__flipInX");
+        navbarBg.classList.remove("animate__animated", "animate__fadeIn");
+
+        isTransitioning = false; // Allow next transition
+    }, 800); // Ensure this happens after both animations complete
+
+    // Move to next index
+    index = (index + 1) % Math.max(profileImages.length, backgroundImages.length);
+}
+
+// **Start the transition loop**
+document.addEventListener("DOMContentLoaded", () => {
+    changeImages();
+    setInterval(changeImages, 6000); // Repeat every 4.5 seconds
+});
+
+document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+        link.classList.add('animate__animated', 'animate__rubberBand');
+
+        // Remove the animation class after it completes (1s duration)
+        setTimeout(() => {
+            link.classList.remove('animate__animated', 'animate__rubberBand');
+        }, 1000);
+    });
 });

@@ -251,12 +251,12 @@ textarea {
 }
 
 .lead {
-    font-size: calc(0.6rem + 1.2vmax);
-    font-weight: 300
+    font-size: calc(0.5rem + 1.2vmax);
+    font-weight: 100;
 }
 
 .display-4 {
-    font-size: calc(1rem + 2.7vmax);
+    font-size: calc(0.8rem + 2.7vmax);
     font-weight: 500;
     line-height: 1.2
 }
@@ -353,7 +353,6 @@ textarea {
 .col-auto {
     flex: 0 0 auto;
     width: auto;
-    margin-top: 0px;
 }
 
 .col-1 {

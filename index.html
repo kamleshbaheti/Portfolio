@@ -3531,7 +3531,7 @@
             <div _ngcontent-ng-c2484005809 class="row">
               <div _ngcontent-ng-c2484005809 class="col-lg-10">
                 <div _ngcontent-ng-c2484005809 class="display-4">
-                  <div _ngcontent-ng-c2484005809 id="word-container"><!----></div><span _ngcontent-ng-c2484005809
+                  <div _ngcontent-ng-c2484005809 class="word-container" id="word"><!----></div><span _ngcontent-ng-c2484005809
                     class="text-brand">I'm Kamlesh</span>
                 </div>
                 <p _ngcontent-ng-c2484005809 class="lead mt-2 mb-4"><span _ngcontent-ng-c2484005809
@@ -3809,8 +3809,8 @@
                     ensuring reliability and accuracy in its assessments. </p>
                   <hr _ngcontent-ng-c3046924639>
                   <div _ngcontent-ng-c3046924639 data-aos style="padding-top: .5rem;"><a _ngcontent-ng-c3046924639
-                      href="./files/internship_certificate.pdf" target="_blank" data-block="button"
-                      data-aos="fade-left" data-aos-delay="150" class="button button--stroke br-3"
+                      href="./files/internship_certificate.pdf" target="_blank" data-block="button" data-aos="fade-left"
+                      data-aos-delay="150" class="button button--stroke br-3"
                       style="--button-stroke: var(--white); --button-hover-color: var(--black);"><span
                         _ngcontent-ng-c3046924639 class="button__flair"></span><span _ngcontent-ng-c3046924639
                         class="button__label">Certificate</span></a></div>
@@ -4285,6 +4285,44 @@ c-0.9,0.1-10.3,4.9-22.6-12.3C5.9,17.7,11.8,26.9,20.8,31.6z" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <script>
     AOS.init();
+    class Home {
+      constructor() {
+        this.words = ["Hola!", "Hello!", "Ciao!", "Olà!", "Bonjour!"];
+        this.currentWordIndex = 0;
+        this.wordContainer = document.getElementById("word");
+        this.animationTimeout = null;
+
+        this.animateWord();
+      }
+
+      animateWord() {
+        const currentWord = this.words[this.currentWordIndex];
+        this.wordContainer.innerHTML = "";
+        [...currentWord].forEach((char, index) => {
+          const span = document.createElement("span");
+          span.textContent = char;
+          span.classList.add("char");
+
+          const textInDelay = parseFloat(getComputedStyle(document.documentElement)
+            .getPropertyValue("--text-in-delay")) || 0.2;
+
+          span.style.animationDelay = `${index * textInDelay}s`;
+          this.wordContainer.appendChild(span);
+        });
+
+        this.currentWordIndex = (this.currentWordIndex + 1) % this.words.length;
+
+        const duration = parseFloat(getComputedStyle(document.documentElement)
+          .getPropertyValue("--duration")) || 2;
+
+        this.animationTimeout = setTimeout(() => this.animateWord(), duration * 2000);
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      new Home();
+    });
+
     gsap.registerPlugin(ScrollTrigger);
     document.querySelectorAll(".animated-svg path").forEach((path) => {
       gsap.set(path, { strokeDasharray: path.getTotalLength(), strokeDashoffset: path.getTotalLength() });
@@ -4315,7 +4353,7 @@ c-0.9,0.1-10.3,4.9-22.6-12.3C5.9,17.7,11.8,26.9,20.8,31.6z" />
     const sendSound = new Audio("./sound/send.mp3");
     const profileSound = new Audio("./sound/profile.mp3");
     const resumeSound = new Audio("./sound/resume.mp3");
-    const skillSound = new Audio("./sound/skills.mp3"); 
+    const skillSound = new Audio("./sound/skills.mp3");
 
     function playClickSound() {
       if (!isMuted) {
